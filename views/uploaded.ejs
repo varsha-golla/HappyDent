@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AssisDent</title>
+	<meta charset='utf-8'>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="/headerstyles.css">
+	<link rel="stylesheet" type="text/css" href="demo.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap.css">
+</head>
+<body style="background-color: #F0FFFF">
+<div id='cssmenu'>
+<ul>
+   <li><a href='/PersonalDetails'><span>Home</span></a></li>
+   <li class='active has-sub'><a href='#'><span>Patient Records</span></a>
+      <ul>
+            <li><a href='/details'><span>Details By Opnum</span></a></li>
+            <li><a href='/s'><span>Details By Query</span></a></li>
+            <li><a href='/agequery'><span>Details by Age and Gender</span></a></li>
+      </ul>
+   </li>
+   <li class='active has-sub'><a href='#'><span>Images</span></a>
+      <ul>
+            <li><a href='/beforeupload/<%= op_number%>'><span>Upload</span></a></li>
+            <li><a href='/showImages/<%= op_number%>'><span>Show Images</span></a></li>
+      </ul>
+   </li>
+   <li style="float:right"><a href='/'><span>Logout</a></li>
+
+</ul>
+</div><br>
+<center><h3>Images for patient with OpNumber:<%= op_number%></h3></center>
+<%if(data.length>0){%>
+	<%for(var i=0;i<data.length;i++){%>
+	<%var x = "/images/"+data[i].name%>
+	<center><img src="<%=x%>" height=200 width=200 align="center" class="responsive-img"><br><br><br></center>
+	<%}%>
+<%}else{%>
+<center><h3>There are no images!!!</h3></center>
+<%}%>
+</body>
+</html>

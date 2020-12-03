@@ -1,0 +1,229 @@
+<html>
+<head>
+<title>AssisDent</title>
+   <!-- <% include index.ejs%> -->
+   <script type="text/javascript">
+      function modify(){
+         console.log("in modify")
+         if(document.getElementById("divsocket").style.display=="block")
+            document.getElementById("divsocket").style.display="none";
+         else
+            document.getElementById("divsocket").style.display="block";
+      }
+     function show(){
+                        document.getElementById("graftdiv").style.display="block";
+                        document.getElementById("grafttext").value=""
+                         document.getElementById("graft1").checked=false;
+                        document.getElementById("graft2").checked=false;
+                        document.getElementById("graft3").checked=false;
+                        document.getElementById("graft4").checked=false;
+                  }
+     function hide(){
+            document.getElementById("graftdiv").style.display="none";
+      }
+
+      
+     
+                 
+   </script>
+</head>
+<body bgcolor="#F0FFFF"><br><br>
+   <form action="/IntraOperationSubmit" method="get">
+<h3>INTRAOPERATIVE CONDITIONS</h3>
+
+<b>Implant system:</b><br>
+<table>
+<tr><td><input type = "radio" style="margin-left:20px" name="implant" value="Syna" >Syna<br></td></tr>
+<tr><td><input type = "radio" style="margin-left:20px" name="implant"  value="Neo biotech">Neo biotech<br></td></tr>
+<tr><td><input type = "radio" style="margin-left:20px" name="implant" value="Noble biocare" >Noble biocare<br></td></tr>
+<tr><td><input type = "radio" style="margin-left:20px" name="implant" value="Genesis" >Genesis<br></td></tr>
+<tr><td><input type = "radio" style="margin-left:20px" name="implant" value="Lasak" >Lasak<br></td></tr>
+<tr><td><input type = "radio" style="margin-left:20px" name="implant" value="MIS implants" >MIS implants<br></td></tr>
+<tr><td><input type = "radio" style="margin-left:20px" name="implant" value="Zimmer" >Zimmer<br></td></tr>
+<tr><td><input type = "radio" style="margin-left:20px" name="implant" value="Tatum" >Tatum<br></td></tr>
+<tr><td><input type = "radio" style="margin-left:20px" name="implant" value="Adin" >Adin<br></td></tr>
+<tr><td><input type = "radio" style="margin-left:20px" name="implant" value="Strauman" >Strauman<br></td></tr>
+<tr><td><input type = "radio" style="margin-left:20px" name="implant" value="Osstem" >Osstem<br></td></tr>
+<tr><td><input type = "radio" style="margin-left:20px" name="implant" value="Megagen" >Megagen<br></td></tr>
+<tr><td><input type = "radio" style="margin-left:20px" name="implant" value="Ankylos" >Ankylos<br></td></tr>
+<tr><td><input type = "radio" style="margin-left:20px" name="implant" value="Bio horizon" >Bio horizon<br><br></td></tr>
+<tr><td>Flap tear/soft tissue:</td><td><textarea rows = "1" cols = "50" name = "flaptear" value="" style="background-color: #F0FFFF">
+
+         </textarea></td></tr>
+</table>
+<b>Bone dehiscence: </b><br>
+<input type = "checkbox" style="margin-left:20px" value="during extraction" name="bonedehiscence">during extraction<br>
+<input type = "checkbox" style="margin-left:20px"  value="implant placement" name="bonedehiscence">implant placement<br>
+<b>site:</b><br>
+<input type = "checkbox" style="margin-left:40px"  name="site" value="Buccal">Buccal<br>
+<input type = "checkbox" style="margin-left:40px" name="site" value="Lingual">Lingual<br>
+<b>Density of bone:<input type="text" name="densitytext" value="" style="background-color: #F0FFFF"><br></b>
+<input type = "checkbox" style="margin-left:20px" name="density" value="D1">D1<br>
+<input type = "checkbox" style="margin-left:20px" name="density" value="D2">D2<br>
+<input type = "checkbox" style="margin-left:20px" name="density" value="D3">D3<br>
+<input type = "checkbox" style="margin-left:20px" name="density" value="D4">D4<br>
+<table><tr><td>Dehiscence of osteotomy:</td>
+<td><input type = "text" name="dehiscence" value="" style="background-color: #F0FFFF"><br></td></tr></table>
+<b><h3>Damage to</h3></b>
+<table>
+<tr><td>Inferior Albeolar nerve:<input type = "checkbox" value="parasthesia" name="nerve">parasthesia<input type = "checkbox" value="pain" name="nerve">pain<input type = "checkbox" value="tingling" name="nerve">tingling</td></tr>
+<tr><td>Sinus Floor:<input type="text" name="sinus" value="" style="background-color: #F0FFFF"><br></td></tr>
+<tr><td>Schneiderian Membrane:<input type="text" name="membrane" value="" style="background-color: #F0FFFF"></td></tr>
+<tr><td>Nasal Floor:<input type="text" name="nasal" value="" style="background-color: #F0FFFF"><br></td></tr>
+<tr><td>Sub mandibular fossa:<input type = "checkbox" name="fossa"  value="swelling">swelling<input type = "checkbox" name="fossa" value="Tenderness">Tenderness<input type = "checkbox" name="fossa" value="Infection">Infection</td></tr>
+
+</table><br>
+<b><h3>IntraOperative Bleed:</h3></b><br>
+<input type = "checkbox" name="intrableed" value="Arterial" style="margin-left:20px">Arterial<br>
+<input type = "checkbox" name="intrableed" value="Venous" style="margin-left:20px">Venous<br>
+<input type = "checkbox" name="intrableed" value="Intra Osseous" style="margin-left:20px">Intra Osseous<br><br>
+<b>Gestal Bone Loss:<br></b>
+<table>
+<tr><td>6 Months : </td><td><textarea rows = "1" cols = "50" name = "sixmonths" style="background-color: #F0FFFF">
+         </textarea><br></td></tr>
+<tr><td>1 Year   :</td><td> <textarea rows = "1" cols = "50" name = "oneyear" style="background-color: #F0FFFF">
+         </textarea><br></td></tr>
+<tr><td>3 Years  :</td><td> <textarea rows = "1" cols = "50" name = "threeyears" style="background-color: #F0FFFF">
+         </textarea><br></td></tr>
+<tr><td>5 Years  : </td><td><textarea rows = "1" cols = "50" name = "fiveyears" style="background-color: #F0FFFF">
+         </textarea><br></td></tr>
+<tr><td>10 Years : </td><td><textarea rows = "1" cols = "50" name = "tenyears" style="background-color: #F0FFFF">
+         </textarea><br></td></tr>
+</table>
+<b>Implant Stability/ISQ:</b><br>
+<input type = "radio" style="margin-left:20px"  name="implantstability" value="lessthan 35">lessthan 35<br>
+<input type = "radio" style="margin-left:20px" name="implantstability" value="35-50">35-50<br>
+<input type = "radio" style="margin-left:20px" name="implantstability" value="greaterthan 50">greaterthan 50<br><br>
+Implant Diameter:<br>
+<input type = "radio" style="margin-left:20px" name="implantdiameter" value="3mm" >3mm<br>
+<input type = "radio" style="margin-left:20px" name="implantdiameter" value="3.5mm" >3.5mm <br>
+<input type = "radio" style="margin-left:20px" name="implantdiameter" value="3.7mm" >3.7mm<br>
+<input type = "radio" style="margin-left:20px" name="implantdiameter" value="4mm" >4mm<br>
+<input type = "radio" style="margin-left:20px" name="implantdiameter" value="4.2mm" >4.2mm<br>
+<input type = "radio" style="margin-left:20px" name="implantdiameter" value="4.5mm" >4.5mm <br>
+<input type = "radio" style="margin-left:20px" name="implantdiameter" value="5mm" >5mm<br>
+<input type = "radio" style="margin-left:20px" name="implantdiameter" value="greaterthan 5mm" >greaterthan 5mm <br><br>
+Implant Length:<br>
+<input type = "radio" style="margin-left:20px" name="implantlength" value="8mm - 8.5 mm">8mm - 8.5 mm<br>
+<input type = "radio" style="margin-left:20px" name="implantlength" value="10mm">10mm<br>
+<input type = "radio" style="margin-left:20px" name="implantlength" value="11mm-11.5mm" >11mm-11.5mm<br><br>
+Type of implant placed:<br>
+<input type = "radio" style="margin-left:20px" name="implantplaced" value="Cylinderical">Cylinderical<br>
+<input type = "radio" style="margin-left:20px" name="implantplaced" value="Tapered">Tapered<br><br>
+<table>
+<tr><td>Crystal / Sub Crystal placement:</td></tr>
+<tr><td>Fracture of Buccal Cortical Plate:</td><td><textarea rows = "1" cols = "50" value="" name = "buccalcortical" style="background-color: #F0FFFF">
+         </textarea><br><br></td></tr>
+<tr><td>Apical perforation of cortical plate:</td><td><textarea rows = "1" cols = "50" value="" name = "corticalplate" style="background-color: #F0FFFF">
+         </textarea><br><br></td></tr>
+<tr><td>Dislodgement of implant into sinus:</td><td><textarea rows = "1" cols = "50" value="" name = "implantsinus" style="background-color: #F0FFFF">
+         </textarea><br><br></td></tr>
+<tr><td>Spinning of implant:</td><td><textarea rows = "1" cols = "50" value="" name = "spinningofimplant" style="background-color: #F0FFFF">
+         </textarea><br><br></td></tr>
+<tr><td>Granulation tissue in preserved socket:</td><td><textarea rows = "1" cols = "50" value="" name = "reservedsocket" style="background-color: #F0FFFF">
+         </textarea><br><br></td></tr>
+<tr><td>Damage to nutrient canal:</td><td><textarea rows = "1" cols = "50" value="" name = "nutrientcanal" style="background-color: #F0FFFF">
+         </textarea><br><br></td></tr>
+<tr><td>Excessive Bleeding:</td><td><textarea rows = "1" cols = "50" value="" name = "excessivebleeding" style="background-color: #F0FFFF">
+         </textarea><br><br></td></tr>
+</table><br>
+<table>
+Osteotomy type:<br>
+<tr><td>Drill:</td><td><input type = "text" name="drill" value="" style="background-color: #F0FFFF"><br></td></tr>
+<tr><td>Ridge Split / Expansion:</td><td><input type = "text" name="ridgesplit" value="" style="background-color: #F0FFFF"><br></td></tr>
+<tr><td>Stepped osteotomy:</td><td><input type = "text" name="steppedosteotomy" value="" style="background-color: #F0FFFF"><br></td></tr>
+<tr><td>with piezo tips:</td><td><input type = "text" name="piezotips" value="" style="background-color: #F0FFFF"><br></td></tr>
+<tr><td>Bone tap:</td><td><input type = "text" name="bonetap" value="" style="background-color: #F0FFFF"><br></td></tr>
+<tr><td>Counter Sink:</td><td><input type = "text" name="countersink" value="" style="background-color: #F0FFFF"><br></td></tr>
+<tr><td>Bone Condensation:</td><td><input type = "text" name="bonecondesation" value="" style="background-color: #F0FFFF"></td></tr>
+</table><br>
+Soft Tissue Closure:<br>
+<table>
+<tr><td>Tension free flap:</td><td><input type = "text" name="tensionfreeflap" value="" style="background-color: #F0FFFF"><br></td></tr>
+<tr><td>Pedicle graft:</td><td><input type = "text" name="pediclegraft" value="" style="background-color: #F0FFFF"><br></td></tr>
+<tr><td>Flap dehiscence:</td><td><input type = "text" name="flapdehiscence" value="" style="background-color: #F0FFFF"><br></td></tr>
+<tr><td>APRF Used:</td><td><input type = "text" name="aprfused" value="" style="background-color: #F0FFFF"><br><br></td></tr>
+<tr><td>Type of suturing:</td><td><input type = "text" name="typeofsuturing" value="" style="background-color: #F0FFFF"><br></td></tr>
+</table>
+Requirement of Graft material:<br>
+<br><input type = "radio" style="margin-left:40px" name="Grafted" value="Grafted" onclick="show()"> Grafted:
+<br>
+   <div id="graftdiv" style="display:none;">
+<pre>
+   <input type = "radio" style="margin-left:40px" name="radioGrafted" id="graft1" value="Auto Genius">Auto Genius</br>
+   <input type = "radio" style="margin-left:40px" name="radioGrafted" id="graft2" value="AlloGraft">AlloGraft</br>
+   <input type = "radio" style="margin-left:40px" name="radioGrafted" id="graft3" value="XenoGraft">XenoGraft</br>
+   <input type = "radio" style="margin-left:40px" name="radioGrafted" id="graft4" value="AlloPlast">AlloPlast</br>
+   <input type = "textarea" style="margin-left:40px" name="grafttext" id="grafttext" value="" style="background-color: #F0FFFF"><br><br>
+</pre>
+</div>
+
+<input type = "radio" style="margin-left:40px" name="Grafted" value="No Graft" onclick="hide()">No Graft
+<br>
+Use of titanium mesh for grafting:<br>
+<input type = "radio" style="margin-left:20px" name="mesh" value="Exposure of titanium mesh">Exposure of titanium mesh<br>
+<input type = "radio" style="margin-left:20px" name="mesh" value="Non exposure of titanium mesh">Non exposure of titanium mesh<br>
+Ridge split:<br>
+<input type = "radio" style="margin-left:20px" name="ridge" value="With peizo instruments">With peizo instruments<br>
+<input type = "radio" style="margin-left:20px" name="ridge" value="With hand instruments">With hand instruments<br>
+Ridge augmentation:<br>
+<input type = "radio" style="margin-left:20px" name="ridge_aug0" value="0-2mm">0-2mm<br>
+<input type = "radio" style="margin-left:20px" name="ridge_aug0" value="2-4mm">2-4mm<br>
+<input type = "radio" style="margin-left:20px" name="ridge_aug0" value="4-6mm">4-6mm<br>
+<input type = "radio" style="margin-left:20px" name="ridge_aug0" value="greater than 6mm">greater than 6mm<br><br><br>
+<input type = "radio" style="margin-left:20px" name="ridge_aug1" value="Vertical">Vertical<br>
+<input type = "radio" style="margin-left:20px" name="ridge_aug1" value="Horizontal">Horizontal<br>
+<input type = "radio" style="margin-left:20px" name="ridge_aug1" value="Block graft">Block graft<br>
+<input type = "radio" style="margin-left:20px" name="ridge_aug1" value="Particular graft with ti mesh">Particular graft with ti mesh<br>
+<input type = "radio" style="margin-left:20px" name="ridge_aug1" value="Particular graft with memebrane">Particular graft with memebrane<br>
+Sinus lift:<br>
+Amount of sinus lift:<input type = "text" name="sinusamount" value="" style="background-color: #F0FFFF"><br>
+Direct:<br>
+<input type = "radio" style="margin-left:40px" name="direct_sinus" value="With implant">With implant<br>
+<input type = "radio" style="margin-left:40px" name="direct_sinus" value="Delayed implant">Delayed implant<br>
+<input type = "radio" style="margin-left:40px"name="direct_sinus" value="bleeding">bleeding<br>
+<input type = "radio" style="margin-left:40px"name="direct_sinus" value="tear of membrane">tear of membrane<br>
+<input type = "radio" style="margin-left:40px"name="direct_sinus" value="infection">infection<br>
+Indirect:<br>
+<input type = "radio" style="margin-left:40px" name="indirect_sinus" value="With prf">With prf<br>
+<input type = "radio" style="margin-left:40px" name="indirect_sinus" value="with grafting">with grafting<br>
+<input type = "radio" style="margin-left:40px" name="indirect_sinus" value="tear of memebrane">tear of memebrane<br>
+<input type = "radio" style="margin-left:40px" name="indirect_sinus" value="implant failure">implant failure<br>
+<input type = "radio" style="margin-left:40px" name="indirect_sinus" value="infection">infection<br>
+Nerve repositioning:<br><table>
+<tr><td><input type = "radio" style="margin-left:20px" name="nerve_repositioning" value="Lateralization">Lateralization<br></td></tr>
+<tr><td><input type = "radio" style="margin-left:20px" name="nerve_repositioning" value="Transposition">Transposition<br></td></tr></table>
+Donor site:<textarea rows = "1" cols = "50" name = "six_months" value="" style="background-color: #F0FFFF">
+         </textarea>
+<table>
+<tr><td>quality of graft:</td><td><input type = "text" name="quality_of_graft" value="" style="background-color: #F0FFFF"><br></td></tr>
+<tr><td>quantity of graft:</td><td><input type = "text" name="quantity_of_graft" value="" style="background-color: #F0FFFF"><br></td></tr>
+<tr><td>morbidity</td><td><input type = "text" name="morbidity" value="" style="background-color: #F0FFFF"><br></td></tr>
+<tr><td>bleed</td><td><input type = "text" name="bleed" value="" style="background-color: #F0FFFF"><br></td></tr>
+</table>
+Socket preservation:<br>
+<table>
+<tr><td><input type = "radio" style="margin-left:20px" name="socket" value="PRF">PRF<br></td></tr>
+<tr><td><input type = "radio" style="margin-left:20px" name="socket" value="bone graft">bone graft<br></td></tr>
+<tr><td><input type = "radio" style="margin-left:20px" name="socket" value="membrane">membrane<br><br></td></tr>
+</table>
+<input type="checkbox" name="socketcheck" onClick="modify()" value="yes" /> Socket shield technique:<br>
+<div id="divsocket" style="display: none;"><table>
+<tr><td>Root length:</td><td><input type = "text" value="" name="Root_length" style="background-color: #F0FFFF"><br><br></td></tr>
+<tr><td>Root width:</td><td><input type = "text" value="" name="Root_width" style="background-color: #F0FFFF"><br><br></td></tr>
+<tr><td>Thickness of shield:</td><td><input type = "text" value="" name="Thickness_of_shield" style="background-color: #F0FFFF"><br><br></td></tr>
+<tr><td>Condition of adjacent tooth:</td><td><input type = "text" value="" name="Condition_of_adjacent_tooth" style="background-color: #F0FFFF"><br><br></td></tr>
+</table> 
+</div>
+Soft tissue grafting:<br>
+<table>
+<tr><td>Connective tissuegraft:</td><td><input type = "text" value="" name="Connective_tissuegraft" style="background-color: #F0FFFF"><br><br></td></tr>
+<tr><td>Free gingival graft:</td><td><input type = "text" value="" name="Free_gingival_graft" style="background-color: #F0FFFF"><br></td></tr>
+<b>Surgical Notes:<br></b>
+   <textarea rows = "1" value="" cols = "50" name = "Surgicalnotes" "></textarea>
+</table>  
+<center>
+   <input type="submit" name="" value="Next" align="left"><br><br>
+</form>
+</body>
+</html>

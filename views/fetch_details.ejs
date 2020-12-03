@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<title>AssisDent</title>
+</head>
+<body style="background-color: #F0FFFF">
+	<%include index.ejs%>
+	<br>
+	<br>
+	<%if(result.length == 0) {%>
+	<h1>No Records Found!!!</h1>
+	<%}else{%>
+	<center><h3>All Records</h3></center>
+	<center><div class="container">
+	<table border="1" class="table table-striped">
+	<tr>
+		<td align="center"><b>OP Number</b></td></b>
+		<td align="center"><b>Patient Name</b></td>
+		<td align="center"><b>Details</b></td>	
+	</tr>
+	<%for(var i=0;i< result.length;i++){%>
+		<tr>
+			<td><%=result[i].op_number%></td>
+			<td><%=result[i].name%></td>
+			<%var preq="/DetailsByOpnumSubmit/"+result[i].op_number%>
+			<td align="center"><a href="<%= preq%>"><button class="btn">Details</button></a></td>
+			<!-- <% var preq="/PreQuery/"+  result[i].op_number%> 
+			<% var intq="/IntraQuery/"+  result[i].op_number%> 
+			<% var posq="/PostQuery/"+  result[i].op_number%> 
+			<td><a href="<%= preq %>"><button>PreOperation</button></a>
+			<a href="<%= intq %>"><button>IntraOperation</button></a>
+			<a href="<%= posq %>"><button>PostOperation</button></a></td> -->
+		</tr>
+	
+	<%}%>
+	</div></table>
+	</center>	
+	<%}%>
+</body>
+ 

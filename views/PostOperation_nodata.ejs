@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AssisDent</title>
+	
+</head>
+<body bgcolor="#F0FFFF">
+	<form action="/PostOperationSubmit" method="get"><br><br>
+	
+<b><h3>POSTOPERATIVE CONDITIONS</h3>
+<table border="0">
+<tr>
+	<td>Fracture of implant:</td>
+	<td><textarea rows = "1" cols = "50" value="" name = "fractureimp" style="background-color: #F0FFFF "></textarea></td>
+</tr>
+<tr>
+	<td>Infection:</td>
+	<td><textarea rows = "1" cols = "50" value="" name = "infection" style="background-color: #F0FFFF "></textarea><br></td>
+</tr>
+<tr>
+	<td>Excess Load:</td>
+	<td><textarea rows = "1" cols = "50" value="" name = "excess" style="background-color: #F0FFFF "></textarea><br></td>
+</tr>
+<tr>
+	<td>Excess insertion torque:</td>
+	<td><textarea rows = "1" cols = "50" value="" name = "excessinsertion" style="background-color: #F0FFFF "></textarea><br></td>
+</tr>
+</table>
+<h3>Temporary Restoration:</h3>
+<table border="0">
+<tr>	
+<td><input type ="radio" name="temporaryrestoration" value="Immediate temporization">Immediate temporization:</td>
+</tr>
+<tr>
+<td><input type ="radio" name="temporaryrestoration" value="Delayed temporization">Delayed temporization:</td>
+</tr>
+</table>
+<h3>Loading protocal:</h3>
+<table>
+
+<tr>
+<td><input type ="radio" name="loadingprotocol" value="Immediate Loading">Immediate Loading:</td>
+<td>
+</tr>
+<tr>
+<td><input type ="radio" name="loadingprotocol" value="Early Loading">Early Loading:</td>
+</tr>
+<tr>
+<td><input type ="radio" name="loadingprotocol" value="Delayed Loading">Delayed Loading:</td>
+</tr>
+<tr>
+<td><input type ="radio" name="loadingprotocol" value="Progressive Loading">Progressive Loading:</td>
+
+</tr>
+</table>
+<h3>Type of Prosthesis:<input type ="text" name="prosthesis1" style="background-color: #F0FFFF "></h3>
+<table border="0">
+<tr>
+	<td><input type ="radio" value="Removable" name="prosthesis">Removable:</td>
+	
+</tr>
+<tr>
+	<td><input type ="radio" value="Screw Retained" name="prosthesis">Screw Retained:</td>
+	
+</tr>
+<tr>
+<td><input type ="radio" value="Cement Retain" name="prosthesis">Cement Retain</td>
+
+</tr>
+<tr>
+<td><input type ="radio" value="Splinted" name="prosthesis">Splinted</td>
+
+</tr>
+<tr>
+<td><input type ="radio" name="prosthesis" value="Non Splinted">Non Splinted:</td>
+
+</tr>
+</table>
+<h3>Material of Prosthesis:</h3>
+<table border="0">
+<tr><td><input type ="radio" value="Metal" name="materialofprosthesis">Metal</td></tr>
+<tr><td><input type ="radio" value="Ceramic" name="materialofprosthesis">Ceramic</td></tr>
+<tr><td><input type ="radio" value="Metal Ceramic" name="materialofprosthesis">Metal Ceramic</td></tr>
+<tr><td><input type ="radio" value="Acrylic" name="materialofprosthesis">Acrylic:</td></tr>
+<tr><td><input type ="radio" value="Zirconia" name="materialofprosthesis">Zirconia:</td></tr>
+</table>
+<h3>Type of Abutment:</h3>
+<table border="0">
+<tr><td><input type ="radio" value="Solid Abutment" name="abutment">Solid Abutment:</td></tr>
+<tr><td><input type ="radio" value="Straight Abutment" name="abutment">Straight Abutment:</td></td></tr>
+
+<tr><td><input type ="radio" value="Angle Abutment" name="abutment">Angle Abutment:</td></tr>
+<tr><td><input type ="radio" value="UCLA Abutment" name="abutment">UCLA Abutment:</td></tr>
+<tr><td><input type ="radio" value="Multi-unit Abutment" name="abutment">Multi-unit Abutment:</td></tr>
+</table>
+<h3>POST OPERATIVE FOLLOW UP</h3>
+<h3>One Week</h3>
+   <table border="0">
+<tr><td>Swelling:</td><td><input type="text" name="swell" value="" style="background-color: #F0FFFF "><br></td></tr>
+<tr><td>Pain:</td><td><input type="text" name="pain" value="" style="background-color: #F0FFFF "><br></td></tr>
+<tr><td>Infection:</td><td><input type="text" name="infectionone" value="" style="background-color: #F0FFFF "><br></td></tr>
+<tr><td>Fistula/sinus tract:</td><td><input type="text" name="fistula" value="" style="background-color: #F0FFFF "><br></td></tr>
+<tr><td>Soft tissue dehiscence:</td><td><input type="text" name="softtissue" value="" style="background-color: #F0FFFF "><br></td></tr>
+<tr><td>Paresthesia changes:</td><td><input type="text" name="paresthesia" value="" style="background-color: #F0FFFF "><br></td></tr>
+<tr><td>Implant Failure:</td><td><input type="text" name="implantfail" value="" style="background-color: #F0FFFF "><br></td></tr>
+<tr><td>Crestal Bone loss:</td><td><input type="text" name="boneloss" value="" style="background-color: #F0FFFF "><br></td></tr>
+  </table>
+
+<h3>One Month</h3>
+   <table border="0">
+<tr><td>Infection:</td><td><input type="text" name="infectmonth" value="" style="background-color: #F0FFFF "><br></td></tr>
+<tr><td>Swelling:</td><td><input type="text" name="swellmonth" value="" style="background-color: #F0FFFF "><br></td></tr>
+<tr><td>Paresthesia changes:</td><td><input type="text" name="paresthesiamonth" value="" style="background-color: #F0FFFF "><br></td></tr>
+<tr><td>Crestal Bone loss:</td><td><input type="text" name="bonelossmonth" value="" style="background-color: #F0FFFF "><br></td></tr>
+   </table>
+<h3>Three Months</h3>
+   <table border="0">
+ <tr>
+ 	<td>Status of osseointegration:</td>
+ 	<td><input type="text" name="status3" value="" style="background-color: #F0FFFF "></td>
+ </tr>
+ </table>
+ <h3>Six Months</h3>
+ <table border="0">
+ <tr><td>Screw loosening:</td><td><input value="" type="text" name="screw6"  style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Implant Failure:</td><td><input value="" type="text" name="implantfail6" style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Abutment fracture:</td><td><input value="" type="text" name="fracture6" style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Abutment screw fracture:</td><td><input value="" type="text" name="screwfracture6" style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Prosthesis screw fracture:</td><td><input value="" type="text" name="Prothesis6" style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Prosthesis fracture:</td><td><input value="" type="text" name="prosthesisfracture6" style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Crestal bone loss:</td><td><input value=""  type="text" name="crestal6" style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Mobility of implant:</td><td><input value="" type="text" name="mobility6" style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Gingival recession:</td><td><input value="" type="text" name="gingival6" style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Gingival overgrowth on ball attachments:</td><td><input value="" type="text" name="ballgingival6" style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Peri-implantitis:</td><td><input value="" type="text" name="peri6" style="background-color: #F0FFFF "><br></td></tr>
+ </table>
+ <h3>One Year</h3>
+ <table border="0">
+ <tr><td>Status of osseointegration:</td><td><input value="" type="text" name="status1" style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Implant-Abutment interface exposure:</td><td><input value="" type="text" name="implant1" style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Mobility of implant:</td><td><input value="" type="text" name="mobility1"style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Screw loosening:</td><td><input value="" type="text" name="loosening1"style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Implant Failure:</td><td><input value="" type="text" name="implantfail1"style="background-color: #F0FFFF "><br></td></tr>
+<tr><td>Abutment fracture:</td><td><input value="" type="text" name="fracture1"style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Abutment screw fracture:</td><td><input value="" type="text" name="screwfracture1"style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Prosthesis screw fracture:</td><td><input value="" type="text" name="Prosthesis1"style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Prosthesis fracture:</td><td><input value="" type="text" name="prosthesisfracture1"style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Crestal bone loss:</td><td><input value="" type="text" name="crestal1"style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>recession:</td><td><input value="" type="text" name="gingival1"style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Gingival overgrowth on ball attachments:</td><td><input value="" type="text" name="ballgingival1"style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Peri-implantitis:</td><td><input value="" type="text" name="peri1"style="background-color: #F0FFFF "><br></td></tr>
+ <tr><td>Discoloration of soft tissue:</td><td><input value="" type="text" name="discolor1"style="background-color: #F0FFFF "><br></td></tr>
+ </table>
+ <b>Surgical Notes:<br></b><br>
+	<textarea rows = "1" value="" cols = "50" name = "Surgicalnotes" "></textarea></b>
+ <center><input type="submit" name="submit"></center>
+</form>
+</body>
+</html>

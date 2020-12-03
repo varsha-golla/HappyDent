@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>AssisDent</title>
+		<meta charset='utf-8'>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="/headerstyles.css">
+   	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #F0FFFF">
+	<% include index.ejs%>
+	<br>
+	<center>
+		<h3>Details Of Patient By OP Number</h3>
+		<form action="/DetailsByOpnumSubmitprev" method="get">
+		Enter the Opnumber of the Patient:<input type="text" name="Opnum">
+		<input type="submit" value="SUBMIT" >
+		<h3>Please enter valid Op Number!!!</h3>
+		<!-- <a href="/DetailsByOpnumSubmitprev"><button class="btn"><h3>Login</h3></button></a> -->
+		<!-- <% if(error){%>
+			<h3>Please enter valid Op Number!!!!!!!!</h3>
+		<%}%> -->
+	</form>
+	</center>
+</body>
+</html>

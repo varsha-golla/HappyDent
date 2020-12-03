@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AssisDent</title>
+  	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="/headerstyles.css">
+   <link rel="stylesheet" type="text/css" href="demo.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap.css">
+</head>
+<body style="background-color: #F0FFFF">
+	<div id='cssmenu'>
+<ul>
+   <li><a href='/PersonalDetails'><span>Home</span></a></li>
+   <li class='active has-sub'><a href='#'><span>Patient Records</span></a>
+      <ul>
+            <li><a href='/details'><span>Details By Opnum</span></a></li>
+            <li><a href='/s'><span>Details By Query</span></a></li>
+            <li><a href='/agequery'><span>Details by Age and Gender</span></a></li>
+      </ul>
+   </li>
+   <li class='active has-sub'><a href='#'><span>Images</span></a>
+      <ul>
+            <li><a href='/beforeupload/<%= op_number%>'><span>Upload</span></a></li>
+            <li><a href='/showImages/<%= op_number%>'><span>Show Images</span></a></li>
+      </ul>
+   </li>
+   <li style="float:right"><a href='/'><span>Logout</a></li>
+
+</ul>
+</div><br>
+    <center><h3>Upload Images/Radiographs For Patient with OpNumber <%= op_number%></h3>
+    <%= typeof msg != 'undefined' ? msg : '' %><br><br>
+    <form action="/upload/<%= op_number%>" method="post" enctype="multipart/form-data">
+          <input name="image" type="file" class="form-control-file"><br><br><br>
+      <button type="submit" class="btn btn-success">Submit</button><br>
+      <!-- <button type="button" class="btn btn-success">Success</button> -->
+      <%if(flag==1){%>
+	<center></center><h3>Image Uploaded Successfully!!!</h3></center>
+	<%}%>
+    </form></center>
+</body>
+</html>

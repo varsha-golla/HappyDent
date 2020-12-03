@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<title>AssisDent</title>
+</head>
+<body>
+	<table style=" border: 1px solid black;border-collapse: collapse;" class="table table-striped">
+			<thead><h3>INTRAOPERATIVE DETAILS</h3></thead>
+			<tbody>
+				<tr>
+					<td style=" border: 1px solid black;"><input type="checkbox" name="io" value="io1" onclick="showDiv(61)" >Implant system
+							<div id="div61" style="display:none;">
+								<input type = "checkbox" style="margin-left:20px" name="io1" value="Syna" >Syna<br>
+								<input type = "checkbox" style="margin-left:20px" name="io1"  value="Neo biotech">Neo biotech<br>
+								<input type = "checkbox" style="margin-left:20px" name="io1" value="Noble biocare" >Noble biocare<br>
+								<input type = "checkbox" style="margin-left:20px" name="io1" value="Genesis">Genesis<br>
+								<input type = "checkbox" style="margin-left:20px" name="io1" value="Lasak" >Lasak<br>
+								<input type = "checkbox" style="margin-left:20px" name="io1" value="MIS implants" >MIS implants<br>
+								<input type = "checkbox" style="margin-left:20px" name="io1" value="Zimmer" >Zimmer<br>
+								<input type = "checkbox" style="margin-left:20px" name="io1" value="Tatum" >Tatum<br>
+								<input type = "checkbox" style="margin-left:20px" name="io1" value="Adin" >Adin<br>
+								<input type = "checkbox" style="margin-left:20px" name="io1" value="Strauman" >Strauman<br>
+								<input type = "checkbox" style="margin-left:20px" name="io1" value="Osstem" >Osstem<br>
+								<input type = "checkbox" style="margin-left:20px" name="io1" value="Megagen" >Megagen<br>
+								<input type = "checkbox" style="margin-left:20px" name="io1" value="Ankylos" >Ankylos<br>
+								<input type = "checkbox" style="margin-left:20px" name="io1" value="Bio horizon" >Bio horizon<br>
+							</div>
+						</td>
+						<td style=" border: 1px solid black;"><input type="checkbox" name="io" value="io3" onclick="showDiv(62)" >Bone dehiscence
+							<div id="div62" style="display:none;">
+								<input type = "checkbox" style="margin-left:20px" value="during extraction" name="io3">during extraction<br>
+								<input type = "checkbox" style="margin-left:20px"  value="implant placement" name="io3">implant placement<br>
+							</div>
+						</td>
+						<td style=" border: 1px solid black;"><input type="checkbox" name="io" value="io4" onclick="showDiv(63)" >site
+							<div id="div63" style="display:none;">
+								<input type = "checkbox" style="margin-left:40px"  name="io4" value="Buccal">Buccal<br>
+								<input type = "checkbox" style="margin-left:40px" name="io4" value="Lingual">Lingual<br>
+							</div>
+						</td>
+						<td style=" border: 1px solid black;"><input type="checkbox" name="io" value="io61" onclick="showDiv(64)" >Density of bone
+							<div id="div64" style="display:none;">
+								<input type = "checkbox" style="margin-left:20px" name="io61" value="D1">D1<br>
+								<input type = "checkbox" style="margin-left:20px" name="io61" value="D2">D2<br>
+								<input type = "checkbox" style="margin-left:20px" name="io61" value="D3">D3<br>
+								<input type = "checkbox" style="margin-left:20px" name="io61" value="D4">D4<br>
+							</div>
+						</td>
+				</tr>
+				<tr>
+					<td style=" border: 1px solid black;"><input type="checkbox" name="io" value="io11" onclick="showDiv(65)" >IntraOperative Bleed
+						<div id="div65" style="display:none;">
+							<input type = "checkbox" name="io11" value="Arterial" style="margin-left:20px">Arterial<br>
+							<input type = "checkbox" name="io11" value="Venous" style="margin-left:20px">Venous<br>
+							<input type = "checkbox" name="io11" value="Intra Osseous" style="margin-left:20px">Intra Osseous<br>
+						</div>
+					</td>
+					<td style=" border: 1px solid black;"><input type="checkbox" name="io" value="io17" onclick="showDiv(66)" >Implant Stability/ISQ
+						<div id="div66" style="display:none;">
+							<input type = "radio" style="margin-left:20px"  name="io17" value="lessthan 35">lessthan 35<br>
+							<input type = "radio" style="margin-left:20px" name="io17" value="35-50">35-50<br>
+							<input type = "radio" style="margin-left:20px" name="io17" value="greaterthan 50">greaterthan 50<br><br>
+						</div>
+					</td>
+					<td style=" border: 1px solid black;"><input type="checkbox" name="io" value="io18" onclick="showDiv(67)" >Implant Diameter
+						<div id="div67" style="display:none;">
+							<input type = "radio" style="margin-left:20px" name="io18" value="3mm" >3mm<br>
+							<input type = "radio" style="margin-left:20px" name="io18" value="3.5mm" >3.5mm <br>
+							<input type = "radio" style="margin-left:20px" name="io18" value="3.7mm" >3.7mm<br>
+							<input type = "radio" style="margin-left:20px" name="io18" value="4mm" >4mm<br>
+							<input type = "radio" style="margin-left:20px" name="io18" value="4.2mm" >4.2mm<br>
+							<input type = "radio" style="margin-left:20px" name="io18" value="4.5mm" >4.5mm <br>
+							<input type = "radio" style="margin-left:20px" name="io18" value="5mm" >5mm<br>
+							<input type = "radio" style="margin-left:20px" name="io18" value="greaterthan 5mm" >greaterthan 5mm <br><br>
+						</div>
+					</td>
+					<td style=" border: 1px solid black;"><input type="checkbox" name="io" value="io19" onclick="showDiv(68)" >Implant Length
+						<div id="div68" style="display:none;">
+							<input type = "radio" style="margin-left:20px" name="io19" value="8mm - 8.5 mm">8mm - 8.5 mm<br>
+							<input type = "radio" style="margin-left:20px" name="io19" value="10mm">10mm<br>
+							<input type = "radio" style="margin-left:20px" name="io19" value="11mm-11.5mm" >11mm-11.5mm<br><br>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style=" border: 1px solid black;"><input type="checkbox" name="io" value="io20" onclick="showDiv(69)" >Type of implant placed
+						<div id="div69" style="display:none;">
+							<input type = "radio" style="margin-left:20px" name="io20" value="Cylinderical">Cylinderical<br>
+							<input type = "radio" style="margin-left:20px" name="io20" value="Tapered">Tapered<br><br>
+						</div>
+					</td>
+					<td style=" border: 1px solid black;"><input type="checkbox" name="io" value="io40" onclick="showDiv(70)" >Requirement of Graft material
+						<div id="div70" style="display:none;">
+							<input type = "radio" style="margin-left:40px" name="io40" value="Auto Genius">Auto Genius</br>
+							<input type = "radio" style="margin-left:40px" name="io40" value="AlloGraft">AlloGraft</br>
+							<input type = "radio" style="margin-left:40px" name="io40" value="XenoGraft">XenoGraft</br>
+							<input type = "radio" style="margin-left:40px" name="io40" value="AlloPlast">AlloPlast</br>
+							<input type = "radio" style="margin-left:40px" name="io40" value="No Graft">No Graft
+						</div>
+					</td>
+					<td style=" border: 1px solid black;"><input type="checkbox" name="io" value="io41" onclick="showDiv(71)" >Use of titanium mesh for grafting
+						<div id="div71" style="display:none;">
+							<input type = "radio" style="margin-left:20px" name="io41" value="Exposure of titanium mesh">Exposure of titanium mesh<br>
+							<input type = "radio" style="margin-left:20px" name="io41" value="Non exposure of titanium mesh">Non exposure of titanium mesh<br>
+						</div>
+					</td>
+					<td style=" border: 1px solid black;"><input type="checkbox" name="io" value="io42" onclick="showDiv(72)" >Ridge split
+						<div id="div72" style="display:none;">
+							<input type = "radio" style="margin-left:20px" name="io42" value="With peizo instruments">With peizo instruments<br>
+							<input type = "radio" style="margin-left:20px" name="io42" value="With hand instruments">With hand instruments<br>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style=" border: 1px solid black;">Ridge augmentation:<br>
+						<input type="checkbox" name="io" value="io43" onclick="showDiv(73)" >Length<br>
+						<div id="div73" style="display:none;">
+							<input type = "radio" style="margin-left:20px" name="io43" value="0-2mm">0-2mm<br>
+							<input type = "radio" style="margin-left:20px" name="io43" value="2-4mm">2-4mm<br>
+							<input type = "radio" style="margin-left:20px" name="io43" value="4-6mm">4-6mm<br>
+							<input type = "radio" style="margin-left:20px" name="io43" value="greater than 6mm">greater than 6mm<br>
+						</div>
+                        <input type="checkbox" name="io" value="io44" onclick="showDiv(733)" >Type<br>
+						<div id="div733" style="display: none;">
+							<input type = "radio" style="margin-left:20px" name="io44" value="Vertical">Vertical<br>
+							<input type = "radio" style="margin-left:20px" name="io44" value="Horizontal">Horizontal<br>
+							<input type = "radio" style="margin-left:20px" name="io44" value="Block graft">Block graft<br>
+							<input type = "radio" style="margin-left:20px" name="io44" value="Particular graft with ti mesh">Particular graft with ti mesh<br>
+							<input type = "radio" style="margin-left:20px" name="io44" value="Particular graft with memebrane">Particular graft with memebrane<br>
+						</div>
+					</td>
+					<td style=" border: 1px solid black;">Sinus lift:<br>
+						<input type="checkbox" name="io" value="io46" onclick="showDiv(74)" >Direct<br>
+							<div id="div74" style="display:none;">
+								<input type = "radio" style="margin-left:40px" name="io46" value="With implant">With implant<br>
+								<input type = "radio" style="margin-left:40px" name="io46" value="Delayed implant">Delayed implant<br>
+								<input type = "radio" style="margin-left:40px"name="io46" value="bleeding">bleeding<br>
+								<input type = "radio" style="margin-left:40px"name="io46" value="tear of membrane">tear of membrane<br>
+								<input type = "radio" style="margin-left:40px"name="io46" value="infection">infection<br>
+							</div>
+						<input type="checkbox" name="io" value="io47" onclick="showDiv(744)" >Indirect<br>
+							<div id="div744" style="display:none;">
+								<input type = "radio" style="margin-left:40px" name="io47" value="With prf">With prf<br>
+								<input type = "radio" style="margin-left:40px" name="io47" value="with grafting">with grafting<br>
+								<input type = "radio" style="margin-left:40px" name="io47" value="tear of memebrane">tear of memebrane<br>
+								<input type = "radio" style="margin-left:40px" name="io47" value="implant failure">implant failure<br>
+								<input type = "radio" style="margin-left:40px" name="io47" value="infection">infection<br>
+							</div>
+					</td>
+					<td style=" border: 1px solid black;"><input type="checkbox" name="io" value="io48" onclick="showDiv(75)" >Nerve repositioning
+						<div id="div75" style="display:none;">
+							<input type = "radio" style="margin-left:20px" name="io48" value="Lateralization">Lateralization<br>
+							<input type = "radio" style="margin-left:20px" name="io48" value="Transposition">Transposition<br>
+						</div>
+					</td>
+					<td style=" border: 1px solid black;"><input type="checkbox" name="io" value="io51" onclick="showDiv(76)" >Socket preservation
+						<div id="div76" style="display:none;">
+							<input type = "radio" style="margin-left:20px" name="io51" value="PRF">PRF<br>
+							<input type = "radio" style="margin-left:20px" name="io51" value="bone graft">bone graft<br>
+							<input type = "radio" style="margin-left:20px" name="io51" value="membrane">membrane<br><br>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="io" value="io21">Fracture of Buccal Cortical Plate</td>
+					<td><input type="checkbox" name="io" value="io22">Apical perforation of cortical plate</td>
+					<td><input type="checkbox" name="io" value="io23">Dislodgement of implant into sinus</td>
+					<td><input type="checkbox" name="io" value="io24">Spinning of implant</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="io" value="io25">Granulation tissue in preserved socket</td>
+					<td><input type="checkbox" name="io" value="io26">Damage to nutrient canal</td>
+					<td><input type="checkbox" name="io" value="io27">Excessive Bleeding</td>
+					<td><input type="checkbox" name="io" value="io28">Drill</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="io" value="io29">Ridge Split / Expansion</td>
+					<td><input type="checkbox" name="io" value="io30">Stepped osteotomy</td>
+					<td><input type="checkbox" name="io" value="io31">with piezo tips</td>
+					<td><input type="checkbox" name="io" value="io32">Bone tap</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="io" value="io33">Counter Sink</td>
+					<td><input type="checkbox" name="io" value="io34">Bone Condensation</td>
+					<td colspan="2"><input type="checkbox" name="io" value="socketcheck">Socket Sheild Technique</td>
+				</tr>
+			</tbody>
+		</table>
+</body>
+</html>
+

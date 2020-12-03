@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<title>AssisDent</title>
+</head>
+<body>
+<table style=" border: 1px solid black;border-collapse: collapse;" class="table table-striped">
+				<thead><h3>PREOPERATION DETAILS</h3></thead>
+				<tbody>
+					<tr>
+						<td style=" border: 1px solid black;"><input type="checkbox" name="pr" value="pr1" onclick="showDiv(1)" >Diabetes
+							<div id="div1" style="display:none;">
+								<input type="radio" name="pr1" value="yes">Yes<br>
+								<input type="radio" name="pr1" value="no">No
+							</div>
+						</td>
+						<td ><input type="checkbox" name="pr" value="pr2" onclick="showDiv(2)">HyperTension
+							<div id="div2" style="display:none;">
+								<input type="radio" name="pr2" value="yes">Yes<br>
+								<input type="radio" name="pr2" value="no">No
+							</div>
+						</td>
+						<td><input type="checkbox" name="pr" value=" pr3"onclick="showDiv(3)">Bleeding Disorders
+							<div id="div3" style="display:none;">
+								<input type="radio" name="pr3" value="yes">Yes<br>
+								<input type="radio" name="pr3" value="no">No
+							</div>
+						</td>
+						<td><input type="checkbox" name="pr" value=" pr4"onclick="showDiv(4)">Thyroid Disorders
+							<div id="div4" style="display:none;">
+								<input type="radio" name="pr4" value="yes">Yes<br>
+								<input type="radio" name="pr4" value="no">No
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="pr" value="pr5"onclick="showDiv(5)">Bone Disorders
+							<div id="div5" style="display:none;">
+								<input type="radio" name="pr5" value="yes">Yes<br>
+								<input type="radio" name="pr5" value="no">No
+							</div>
+						</td>
+						<td><input type="checkbox" name="pr" value="pr6"onclick="showDiv(6)">NeuroMuscular Disorders
+							<div id="div6" style="display:none;">
+								<input type="radio" name="pr6" value="yes">Yes<br>
+								<input type="radio" name="pr6" value="no">No
+							</div>
+						</td>
+						<td><input type="checkbox" name="pr" value="pr7" onclick="showDiv(7)">Mentally Challanged
+							<div id="div7" style="display:none;">
+								<input type="radio" name="pr7" value="yes">Yes<br>
+								<input type="radio" name="pr7" value="no">No
+							</div>
+						</td>
+						<td><input type="checkbox" name="pr" value="pr10"onclick="showDiv(10)">platelet Count
+							<div id="div10" style="display:none;">
+								<input type="radio" name="pr10" value="Normal : 1.5 to 4.5 lakhs/cumm">Normal : 1.5 to 4.5 lakhs/cumm<br>
+								<input type="radio" name="pr10" value=">4.5 lakhs/cumm">>4.5 lakhs/cumm<br>
+								<input type="radio" name="pr10" value="<1.5 lakhs/cumm"> <1.5 lakhs/cumm<br>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="pr" value="pr11" onclick="showDiv(11)">RBC Count
+							<div id="div11" style="display:none;">
+								<input type="radio" name="pr11" value="Normal : 4.5 to 5.5 mill/cumm">Normal : 4.5 to 5.5 mill/cumm<br>
+								<input type="radio" name="pr11" value="< 4.5  mill/cumm"> < 4.5  mill/cumm<br>
+								<input type="radio" name="pr11" value=">5.5 mill/cumm">>5.5 mill/cumm<br>
+							</div>
+						</td>
+						<td><input type="checkbox" name="pr" value="pr12"onclick="showDiv(12)">WBC Count
+							<div id="div12" style="display:none;">
+								<input type="radio" name="pr12" value="Normal : 5,000 to 10,000 cells/cumm">Normal : 5,000 to 10,000 cells/cumm<br>
+								<input type="radio" name="pr12" value="< 5,000 cells/cumm">< 5,000 cells/cumm<br>
+								<input type="radio" name="pr12" value=">10,000 cells/cumm">>10,000 cells/cumm<br>
+							</div>
+						</td>
+						<td><input type="checkbox" name="pr" value="pr13" onclick="showDiv(13)">INR
+							<div id="div13" style="display:none;">
+								<input type="radio" name="pr13" value="Normal : 1.1 or below">Normal : 1.1 or below
+								<br>
+								<input type="radio" name="pr13" value=">1.1">>1.1<br>
+							</div>
+						</td>
+						<td><input type="checkbox" name="pr" value="pr14" onclick="showDiv(14)">RBS
+							<div id="div14" style="display:none;">
+								<input type="radio" name="pr14" value="Normal : 70 to 170 mg/dl">Normal : 70 to 170 mg/dl<br>
+								<input type="radio" name="pr14" value="< 70 mg/dl">< 70 mg/dl<br>
+								<input type="radio" name="pr14" value="> 170 mg/dl">> 170 mg/dl<br>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="pr" value="pr19"onclick="showDiv(19)">Bruxism
+							<div id="div19" style="display:none;">
+								<input type="radio" name="pr19" value="yes">Yes<br>
+								<input type="radio" name="pr19" value="no">No<br>
+							</div>
+						</td>
+						<td><input type="checkbox" name="pr" value="pr20"onclick="showDiv(20)">Smoking
+							<div id="div20" style="display:none;">
+								<input type="radio" name="pr20" value="yes">Yes<br>
+								<input type="radio" name="pr20" value="no">No<br>
+							</div>
+						</td>
+						<td><input type="checkbox" name="pr" value="pr21"onclick="showDiv(21)">Pan Chewing
+							<div id="div21" style="display:none;">
+								<input type="radio" name="pr21" value="yes">Yes<br>
+								<input type="radio" name="pr21" value="no">No<br>
+							</div>
+						</td>
+						<td><input type="checkbox" name="pr" value="pr22"onclick="showDiv(22)">Tongue Thrusting
+							<div id="div22" style="display:none;">
+								<input type="radio" name="pr22" value="yes">Yes<br>
+								<input type="radio" name="pr22" value="no">No<br>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="pr" value="pr23"onclick="showDiv(23)">Alcohol
+							<div id="div23" style="display:none;">
+								<input type="radio" name="pr23" value="yes">Yes<br>
+								<input type="radio" name="pr23" value="no">No<br>
+							</div>
+						</td>
+						<td><input type="checkbox" name="pr" value="pr28"onclick="showDiv(28)">Soft Tissue
+							<div id="div28" style="display:none;">
+								<input type="radio" name="pr28" value="Thin biotype">Thin biotype<br>
+								<input type="radio" name="pr28" value="Thick biotype">Thick biotype<br>
+								<input type="radio" name="pr28" value="Firm and resilient">Firm and resilient<br>
+								<input type="radio" name="pr28" value="Inflamed">Inflamed<br>
+								<input type="radio" name="pr28" value="Others">Others<br>
+							</div>
+						</td>
+						<td><input type="checkbox" name="pr121" onclick="showDiv(121)">Occlusal Scheme<br>
+							<div id="div121" style="display:none;">
+									<li>Mutually protected/group function:<br>
+										<ul>
+											<li><input type="checkbox" name="pr" value="pr29">Right:<br>
+												<input type="radio" name="pr29" value="Canine guided">Canine guided<br>
+												<input type="radio" name="pr29" value="Group function">Group function<br>	
+											</li>
+											<li><input type="checkbox" name="pr" value="pr30">Left:<br>
+												<input type="radio" name="pr30" value="Canine guided">Canine guided<br>
+												<input type="radio" name="pr30" value="Group function">Group function<br>	
+											</li>
+										</ul>
+									</li><br>
+									<li>Interferences:<br>
+										<ul>
+											<li><input type="checkbox" name="pr" value="pr31">Right:<br>
+												<input type="radio" name="pr31" value="Working">Working<br>
+												<input type="radio" name="pr31" value="Non Working">Non Working<br>	
+											</li>
+											<li><input type="checkbox" name="pr" value="pr32">Left:<br>
+												<input type="radio" name="pr32" value="Working">Working<br>
+												<input type="radio" name="pr32" value="Non Working">Non Working<br>	
+											</li>
+										</ul>
+									</li>
+							</div>
+						</td>
+						<td><input type="checkbox" name="pr" value="pr34"onclick="showDiv(34)">Seiberts classification of edentulous ridge:
+							<div id="div34" style="display:none;">
+								<input type="radio" name="pr34" value="Class-1">Class-1<br>
+								<input type="radio" name="pr34" value="Class-2">Class-2<br>
+								<input type="radio" name="pr34" value="Class-3">Class-3<br>
+								<input type="radio" name="pr34" value="Class-4">Class-4<br>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="pr" value="pr35"onclick="showDiv(35)">Immediate Implants
+							<div id="div35" style="display:none;">
+								<input type="radio" name="pr35" value="Endodontically treated">Endodontically treated<br>
+								<input type="radio" name="pr35" value="Periodontal compromised">Periodontal compromised<br>
+								<input type="radio" name="pr35" value="Active Infection">Active Infection<br>
+								<input type="radio" name="pr35" value="Root resorption">Root resorption<br>
+								<input type="radio" name="pr35" value="Peri Apical Lesions">Peri Apical Lesions<br>
+								<input type="radio" name="pr35" value="Trauma">Trauma<br>
+								<input type="radio" name="pr35" value="Others">Others<br>
+							</div>
+						</td>
+						<td><input type="checkbox" name="pr" value="pr40">Cardio Vascular disorders</td>
+						<td><input type="checkbox" name="pr" value="pr8">Congential Disorders</td>
+						<td><input type="checkbox" name="pr" value="pr15">HbsAg</td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="checkbox" name="pr" value="pr16">HIV</td>
+						<td colspan="2"><input type="checkbox" name="pr" value="pr17">HCV</td>
+					</tr>
+				</tbody>
+			</table>
+	</body>
+</html>

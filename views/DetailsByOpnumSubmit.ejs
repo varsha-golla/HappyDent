@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AssisDent</title>
+	<meta charset='utf-8'>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="/headerstyles.css">
+   	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function show(a){
+			if(document.getElementById(a).style.display==="none")
+				document.getElementById(a).style.display="block";
+			else
+				document.getElementById(a).style.display="none";
+		}
+		 function ifYes(a){
+		 	if(document.getElementById('yess'+a).checked){
+		 		document.getElementById('div'+a).style.display="block";
+		 	}
+		 	else {
+		 		document.getElementById('div'+a).style.display="none";
+		 	}
+		 }
+	</script>
+</head>
+<body  style="background-color: #F0FFFF">
+<div id='cssmenu'>
+<ul>
+   <li><a href='/PersonalDetails'><span>Home</span></a></li>
+   <li class='active has-sub'><a href='#'><span>Patient Records</span></a>
+      <ul>
+            <li><a href='/details'><span>Details By Opnum</span></a></li>
+            <li><a href='/s'><span>Details By Query</span></a></li>
+            <li><a href='/agequery'><span>Details by Age and Gender</span></a></li>
+      </ul>
+   </li>
+   <!-- <li><a href='/PreOperation'><span>PreOperation</span></a></li>
+   <li><a href='/IntraOperation'><span>IntraOperation</span></a></li>
+   <li><a href='/PostOperation'><span>PostOperation</span></a></li> -->
+
+   <li class='active has-sub'><a href='#'><span>Images</span></a>
+      <ul>
+            <li><a href='/beforeupload/<%= op_number%>'><span>Upload</span></a></li>
+            <li><a href='/showImages/<%= op_number%>'><span>Show Images</span></a></li>
+      </ul>
+   </li>
+   <li style="float:right"><a href='/'><span>Logout</a></li>
+
+</ul>
+</div><br>
+<center><h1>Details of the patient with OPNumber <%= op_number%></h1></center>
+<h3>Click On the below button to View PreOperation Details</h3>
+<input type="button" value="PreOperative" onclick="show('pre')" class="btn">
+<br>
+<div id="pre"  style="display:none;">
+	<% include PreOperation_Details.ejs%>
+</div>	
+<br>
+<h3>Click On the below button to View IntraOperation Details</h3>
+<input type="button"  value="IntraOperative"onclick="show('intra')" class="btn">
+<br>
+<div id="intra"  style="display:none;">
+      <% include IntraOperation_Details.ejs %>
+</div>
+<br>
+<h3>Click On the below button to View PostOperation Details</h3>
+<input type="button"  value="PostOperative"onclick="show('post')" class="btn">
+<br>
+<div id="post"  style="display:none;">
+      <% include PostOperation_Details.ejs %>
+</div>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<html>
+<head>
+	<title>AssisDent</title>
+</head>
+<body style="background-color: #F0FFFF">
+	
+<%if(post_res.length>0){%>
+	<form action="/post_save"  method="get">
+		<center>Op_number: <input type="text" name="op_num" value="<%=post_res[0].op_number%>"></center>
+	<h3>POSTOPERATIVE CONDITIONS</h3>
+	<table border="0">
+	<tr>
+	<td>Fracture of implant:</td>
+
+	<td><textarea rows = "1" cols = "50"   value="" name = "fractureimp"><%= post_res[0].po1%></textarea></td>
+	</tr>
+	<tr>
+	<td>Infection:</td>
+	<td><textarea rows = "1" cols = "50"   value="" name = "infection"><%= post_res[0].po2%></textarea><br></td>
+	</tr>
+	<tr>
+	<td>Excess Load:</td>
+	<td><textarea rows = "1" cols = "50"  value=""  name = "excess"><%= post_res[0].po3%></textarea><br></td>
+	</tr>
+	<tr>
+	<td>Excess insertion torque:</td>
+	<td><textarea rows = "1" cols = "50"   value="" name = "excessinsertion"><%= post_res[0].po4%></textarea><br></td>
+	</tr>
+	</table>
+	<% var temp_restore=post_res[0].po5 %>
+	<%=temp_restore%>
+	<h3>Temporary Restoration:</h3>
+	<table border="0">
+	<tr>	
+	<td><input type ="radio" name="temporaryrestoration" value="Immediate temporization" <% if ( "Immediate temporization"==  temp_restore ){%>  checked <%}%> >Immediate temporization:</td>
+	</tr>
+	<tr>
+	<td><input type ="radio" name="temporaryrestoration" value="Delayed temporization" <% if ( "Delayed temporization"==  temp_restore ){%>  checked <%}%>>Delayed temporization:</td>
+	</tr>
+	</table>
+	 <% var load=post_res[0].po6 %>
+	 
+	<h3>Loading protocal:</h3>
+	<table>
+
+	<tr>
+	<td><input type ="radio" name="loadingprotocol" value="Immediate Loading" <% if ( "Immediate Loading"==  load ){%>  checked <%}%>>Immediate Loading:</td>
+	<td>
+	</tr>
+	<tr>
+	<td><input type ="radio" name="loadingprotocol" value="Early Loading" <% if ( "Early Loading"==  load ){%>  checked <%}%>>Early Loading:</td>
+	</tr>
+	<tr>
+	<td><input type ="radio" name="loadingprotocol" value="Delayed Loading" <% if ( "Delayed Loading"==  load ){%>  checked <%}%>>Delayed Loading:</td>
+	</tr>
+	<tr>
+	<td><input type ="radio" name="loadingprotocol" value="Progressive Loading" <% if ( "Progressive Loading"==  load ){%>  checked <%}%>>Progressive Loading:</td>
+	</tr>
+	</table>
+
+	<% var str=post_res[0].po7.split("*")%>
+	<%var prosthType = str[0]%>
+	<h3>Type of Prosthesis:<textarea name="prosthesis1"><%= str[1]%></textarea></h3>
+	<table border="0">
+	<tr>
+	<td><input type ="radio" value="Removable" name="prosthesis" <% if ( "Removable"==  prosthType ){%>  checked <%}%>>Removable:</td>
+
+	</tr>
+	<tr>
+	<td><input type ="radio" value="Screw Retained" name="prosthesis" <% if ( "Screw Retained"==  prosthType ){%>  checked <%}%>>Screw Retained:</td>
+
+	</tr>
+	<tr>
+	<td><input type ="radio" value="Cement Retain" name="prosthesis" <% if ( "Cement Retain"==  prosthType ){%>  checked <%}%>>Cement Retain:</td>
+
+	</tr>
+	<tr>
+	<td><input type ="radio" value="Splinted" name="prosthesis" <% if ( "Splinted"==  prosthType ){%>  checked <%}%>>Splinted:</td>
+
+	</tr>
+	<tr>
+	<td><input type ="radio" name="prosthesis" value="Non Splinted" <% if ( "Non Splinted"==  prosthType ){%>  checked <%}%>>Non Splinted:</td>
+
+	</tr>
+	</table>
+	<% var matOfProsthesis=post_res[0].po8%>
+	<h3>Material of Prosthesis:</h3>
+	<table border="0">
+	<tr><td><input type ="radio" value="Metal" name="materialofprosthesis" <% if ( "Metal"==  matOfProsthesis ){%>  checked <%}%>>Metal:</td></tr>
+	<tr><td><input type ="radio" value="Ceramic" name="materialofprosthesis" <% if ( "Ceramic"==  matOfProsthesis ){%>  checked <%}%>>Ceramic:</td></tr>
+	<tr><td><input type ="radio" value="Metal Ceramic" name="materialofprosthesis" <% if ( "Metal Ceramic"==  matOfProsthesis ){%>  checked <%}%>>Metal Ceramic:</td></tr>
+	<tr><td><input type ="radio" value="Acrylic" name="materialofprosthesis" <% if ( "Acrylic"==  matOfProsthesis ){%>  checked <%}%>>Acrylic:</td></tr>
+	<tr><td><input type ="radio" value="Zirconia" name="materialofprosthesis" <% if ( "Zirconia"==  matOfProsthesis ){%>  checked <%}%>>Zirconia:</td></tr>
+	</table>
+	<% var typeOfAbutment=post_res[0].po9%>
+
+	<h3>Type of Abutment:</h3>
+	<table border="0">
+	<tr><td><input type ="radio" value="Solid Abutment" name="abutment" <% if ( "Solid Abutment"==  typeOfAbutment ){%>  checked <%}%>>Solid Abutment:</td></tr>
+	<tr><td><input type ="radio" value="Straight Abutment" name="abutment" <% if ( "Straight Abutment"==  typeOfAbutment ){%>  checked <%}%>>Straight Abutment:</td></td></tr>
+
+	<tr><td><input type ="radio" value="Angle Abutment" name="abutment" <% if ( "Angle Abutment"==  typeOfAbutment ){%>  checked <%}%>>Angle Abutment:</td></tr>
+	<tr><td><input type ="radio" value="UCLA Abutment" name="abutment" <% if ( "UCLA Abutment"==  typeOfAbutment ){%>  checked <%}%>>UCLA Abutment:</td></tr>
+	<tr><td><input type ="radio" value="Multi-unit Abutment" name="abutment" <% if ( "Multi-unit Abutment"==  typeOfAbutment ){%>  checked <%}%>>Multi-unit Abutment:</td></tr>
+	</table>
+	<h3>POST OPERATIVE FOLLOW UP</h3>
+	<h3>One Week</h3>
+	   <table border="0">
+	<tr><td>Swelling:</td><td><textarea  value="" name="swell"><%= post_res[0].po10 %></textarea><br></td></tr>
+	<tr><td>Pain:</td><td><textarea name="pain" value=""><%= post_res[0].po11 %></textarea> <br></td></tr>
+	<tr><td>Infection:</td><td><textarea name="infectionone" value=""><%= post_res[0].po12 %></textarea> <br></td></tr>
+	<tr><td>Fistula/sinus tract:</td><td><textarea name="fistula" value=""><%= post_res[0].po13 %></textarea> <br></td></tr>
+	<tr><td>Soft tissue dehiscence:</td><td><textarea  value="" name="softtissue"><%= post_res[0].po14 %></textarea> <br></td></tr>
+	<tr><td>Paresthesia changes:</td><td><textarea  value="" name="paresthesia"><%= post_res[0].po15 %></textarea> <br></td></tr>
+	<tr><td>Implant Failure:</td><td><textarea   value="" name="implantfail"><%= post_res[0].po16 %></textarea><br></td></tr>
+	<tr><td>Crestal Bone loss:</td><td><textarea  value="" name="boneloss"><%= post_res[0].po17 %></textarea> <br></td></tr>
+	  </table>
+
+	<h3>One Month</h3>
+	   <table border="0">
+	<tr><td>Infection:</td><td><textarea name="infectmonth" value=""><%= post_res[0].po18 %></textarea> <br></td></tr>
+	<tr><td>Swelling:</td><td><textarea name="swellmonth" value=""><%= post_res[0].po19 %></textarea> <br></td></tr>
+	<tr><td>Paresthesia changes:</td><td><textarea name="paresthesiamonth" value=""><%= post_res[0].po20 %></textarea> <br></td></tr>
+	<tr><td>Crestal Bone loss:</td><td><textarea name="bonelossmonth" value=""><%= post_res[0].po21 %></textarea> <br></td></tr>
+	   </table>
+	<h3>Three Months</h3>
+	   <table border="0">
+	 <tr>
+	 	<td>Status of osseointegration:</td>
+	 	<td><textarea name="status3" value=""><%= post_res[0].po22 %></textarea> </td>
+	 </tr>
+	 </table>
+	 <h3>Six Months</h3>
+	 <table border="0">
+	 <tr><td>Screw loosening:</td><td><textarea value=""   name="screw6"><%= post_res[0].po23%></textarea> <br></td></tr>
+	 <tr><td>Implant Failure:</td><td><textarea value="" type="text" name="implantfail6"><%= post_res[0].po24 %></textarea><br></td></tr>
+	 <tr><td>Abutment fracture:</td><td><textarea value=""  name="fracture6"><%= post_res[0].po25 %></textarea> <br></td></tr>
+	 <tr><td>Abutment screw fracture:</td><td><textarea  value=""  name="screwfracture6"><%= post_res[0].po26 %></textarea><br></td></tr>
+	 <tr><td>Prosthesis screw fracture:</td><td><textarea value=""  name="Prothesis6"><%= post_res[0].po27 %></textarea> <br></td></tr>
+	 <tr><td>Prosthesis fracture:</td><td><textarea  value=""  name="prosthesisfracture6"><%= post_res[0].po28 %></textarea><br></td></tr>
+	 <tr><td>Crestal bone loss:</td><td><textarea value="" name="crestal6"><%= post_res[0].po29 %></textarea><br></td></tr>
+	 <tr><td>Mobility of implant:</td><td><textarea value=""  name="mobility6"><%= post_res[0].po30 %></textarea> <br></td></tr>
+	 <tr><td>Gingival recession:</td><td><textarea value=""  name="gingival6"><%= post_res[0].po31 %></textarea> <br></td></tr>
+	 <tr><td>Gingival overgrowth on ball attachments:</td><td><textarea value=""  name="ballgingival6"><%= post_res[0].po32 %></textarea> <br></td></tr>
+	 <tr><td>Peri-implantitis:</td><td><textarea value=""  name="peri6"><%= post_res[0].po33 %></textarea> <br></td></tr>
+	 </table>
+	 <h3>One Year</h3>
+	 <table border="0">
+	 <tr><td>Status of osseointegration:</td><td><textarea value="" name="status1"><%= post_res[0].po34 %></textarea>  <br></td></tr>
+	 <tr><td>Implant-Abutment interface exposure:</td><td><textarea value=""  name="implant1"><%= post_res[0].po35 %></textarea> <br></td></tr>
+	 <tr><td>Mobility of implant:</td><td><textarea value=""  name="mobility1"><%= post_res[0].po36 %></textarea> <br></td></tr>
+	 <tr><td>Screw loosening:</td><td><textarea value=""  name="loosening1"><%= post_res[0].po37 %></textarea> <br></td></tr>
+	 <tr><td>Implant Failure:</td><td><textarea value="" name="implantfail1"><%= post_res[0].po38 %></textarea>  <br></td></tr>
+	<tr><td>Abutment fracture:</td><td><textarea value="" name="fracture1"><%= post_res[0].po39 %></textarea>  <br></td></tr>
+	 <tr><td>Abutment screw fracture:</td><td><textarea value=""  name="screwfracture1"><%= post_res[0].po40 %></textarea> <br></td></tr>
+	 <tr><td>Prosthesis screw fracture:</td><td><textarea value=""  name="Prosthesis1"><%= post_res[0].po41 %></textarea> <br></td></tr>
+	 <tr><td>Prosthesis fracture:</td><td><textarea value="" name="prosthesisfracture1"><%= post_res[0].po42 %></textarea>  <br></td></tr>
+	 <tr><td>Crestal bone loss:</td><td><textarea value="" name="crestal1"><%= post_res[0].po43 %></textarea>  <br></td></tr>
+	 <tr><td>recession:</td><td><textarea value="" name="gingival1"><%= post_res[0].po44 %></textarea>  <br></td></tr>
+	 <tr><td>Gingival overgrowth on ball attachments:</td><td><textarea value="" name="ballgingival1"><%= post_res[0].po45 %></textarea>  <br></td></tr>
+	 <tr><td>Peri-implantitis:</td><td><textarea value=""  name="peri1"><%= post_res[0].po46 %></textarea> <br></td></tr>
+	 <tr><td>Discoloration of soft tissue:</td><td><textarea value=""  name="discolor1"><%= post_res[0].po47 %></textarea> <br></td></tr>
+	 </table>
+	 <center><input type="submit" value="save"></center>
+	 </form>
+ <%}else{%>
+ <h3>There is no data</h3>
+<%}%>
+</body>
+</html>

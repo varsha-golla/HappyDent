@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>AssisDent</title>
+   <script type="text/javascript">
+      function hide(){
+           document.getElementById("graftdiv").style.display="none";
+      }
+      function show1(){
+                        
+                        document.getElementById("grafttext").value=""
+                         document.getElementById("graft1").checked=false;
+                        document.getElementById("graft2").checked=false;
+                        document.getElementById("graft3").checked=false;
+                        document.getElementById("graft4").checked=false;
+                        document.getElementById("graftdiv").style.display="block";
+      }
+   </script>
+</head>
+<body style="background-color: #F0FFFF">
+	
+<%if(intra_res.length>0){%>
+	<h3>INTRAOPERATIVE CONDITIONS</h3>
+
+	<% var implant =intra_res[0].io1%>
+	<table>
+	<tr><td><input type = "checkbox" style="margin-left:20px" name="implant" value="Syna" <% if(implant.indexOf("Syna")>= 0){%>checked <%}%> >Syna<br></td></tr>
+	<tr><td><input type = "checkbox" style="margin-left:20px" name="implant"  value="Neo biotech" <% if(implant.indexOf("Neo biotech")>= 0){%>checked <%}%>>Neo biotech<br></td></tr>
+	<tr><td><input type = "checkbox" style="margin-left:20px" name="implant" value="Noble biocare" <% if(implant.indexOf("Noble biocare")>= 0){%>checked <%}%>>Noble biocare<br></td></tr>
+	<tr><td><input type = "checkbox" style="margin-left:20px" name="implant" value="Genesis" <% if(implant.indexOf("Genesis") >= 0){%>checked <%}%>>Genesis<br></td></tr>
+	<tr><td><input type = "checkbox" style="margin-left:20px" name="implant" value="Lasak"<% if(implant.indexOf("Lasak")>= 0){%>checked <%}%> >Lasak<br></td></tr>
+	<tr><td><input type = "checkbox" style="margin-left:20px" name="implant" value="MIS implants" <% if(implant.indexOf("MIS implants")>= 0){%>checked <%}%> >MIS implants<br></td></tr>
+	<tr><td><input type = "checkbox" style="margin-left:20px" name="implant" value="Zimmer"<% if(implant.indexOf("Zimmer")>= 0){%>checked <%}%> >Zimmer<br></td></tr>
+	<tr><td><input type = "checkbox" style="margin-left:20px" name="implant" value="Tatum" <% if(implant.indexOf("Tatum")>= 0){%>checked <%}%>>Tatum<br></td></tr>
+	<tr><td><input type = "checkbox" style="margin-left:20px" name="implant" value="Adin" <% if(implant.indexOf("Adin")>= 0){%>checked <%}%>>Adin<br></td></tr>
+	<tr><td><input type = "checkbox" style="margin-left:20px" name="implant" value="Strauman" <% if(implant.indexOf("Strauman")>= 0){%>checked <%}%>>Strauman<br></td></tr>
+	<tr><td><input type = "checkbox" style="margin-left:20px" name="implant" value="Osstem" <% if(implant.indexOf("Osstem")>= 0){%>checked <%}%>>Osstem<br></td></tr>
+	<tr><td><input type = "checkbox" style="margin-left:20px" name="implant" value="Megagen" <% if(implant.indexOf("Megagen")>= 0){%>checked <%}%>>Megagen<br></td></tr>
+	<tr><td><input type = "checkbox" style="margin-left:20px" name="implant" value="Ankylos" <% if(implant.indexOf("Ankylos")>= 0){%>checked <%}%>>Ankylos<br></td></tr>
+	<tr><td><input type = "checkbox" style="margin-left:20px" name="implant" value="Bio horizon" <% if(implant.indexOf("Bio horizon")>= 0){%>checked <%}%> >Bio horizon<br><br></td></tr>
+
+	<tr><td>Flap tear/soft tissue:</td><td><textarea rows = "1" cols = "50" name = "flaptear" value=""><%= intra_res[0].io2 %></textarea></td></tr>
+	</table>
+	<% var bonedehiscence =intra_res[0].io3%>
+	Bone dehiscence<br>
+	<input type = "checkbox" style="margin-left:20px" value="during extraction" name="bonedehiscence" <% if(bonedehiscence == "during extraction"){%> checked <%}%> >during extraction<br>
+	<input type = "checkbox" style="margin-left:20px"  value="implant placement" name="bonedehiscence" <% if(bonedehiscence == "implant placement"){%> checked <%}%>>implant placement<br>
+
+	<%var site=intra_res[0].io4%>
+	site<br>
+	<input type = "checkbox" style="margin-left:40px"  name="site" value="Buccal" <% if(site == "Buccal"){%> checked <%}%>>Buccal<br>
+	<input type = "checkbox" style="margin-left:40px" name="site" value="Lingual" <% if(site == "Lingual"){%> checked <%}%>>Lingual<br>
+
+	<%var density=intra_res[0].io61%>
+	<%var densitytext=density.split("*")%>
+	<%var len=densitytext.length %>
+	<%if(len>0){%>
+      <%var text=densitytext[len-1]%>
+  	<%}%>
+	Density of bone <input type = "text" name="densitytext" value="<%=text%>" ><br>
+	<input type = "checkbox" style="margin-left:20px" name="density" value="D1" <% if(density.indexOf("D1")>= 0){ %> checked <%}%> >D1<br>
+	<input type = "checkbox" style="margin-left:20px" name="density" value="D2" <% if(density.indexOf("D2")>= 0){ %> checked <%}%> >D2<br>
+	<input type = "checkbox" style="margin-left:20px" name="density" value="D3" <% if(density.indexOf("D3")>= 0){ %> checked <%}%> >D3<br>
+	<input type = "checkbox" style="margin-left:20px" name="density" value="D4" <% if(density.indexOf("D4")>= 0){ %> checked <%}%>  >D4<br>
+	<table><tr><td>Dehiscence of osteotomy:</td><td><input type = "text" name="dehiscence" value="<%= intra_res[0].io5 %>" ></td></tr></table>
+	<h3>Damage to</h3>
+	<table>
+	<%var nerve=intra_res[0].io10%>
+	<tr><td>Inferior Albeolar nerve:<input type = "checkbox" value="parasthesia" name="nerve" <% if(nerve.indexOf("parasthesia")>= 0){ %> checked <%}%> >parasthesia<input type = "checkbox" value="pain" name="nerve" <% if(nerve.indexOf("pain")>= 0){ %> checked <%}%> >pain<input type = "checkbox" value="tingling" name="nerve" <% if(nerve.indexOf("tingling")>= 0){ %> checked <%}%> >tingling</td></tr>
+	<tr><td>Sinus Floor:<input type="text" name="sinus" value="<%= intra_res[0].io6 %>"><br></td></tr>
+	<tr><td>Schneiderian Membrane:<input type="text" name="membrane" value="<%= intra_res[0].io7 %>" ></td></tr>
+	<tr><td>Nasal Floor:<input type="text" name="nasal" value="<%= intra_res[0].io8 %>"><br></td></tr>
+	<% var fossa=intra_res[0].io9%>
+	<tr><td>Sub mandibular fossa:<input type = "checkbox" name="fossa"  value="swelling" <% if(fossa.indexOf("swelling")>= 0){ %> checked <%}%> >swelling<input type = "checkbox" name="fossa" value="Tenderness" <% if(fossa.indexOf("Tenderness")>= 0){%>checked <%}%>>Tenderness<input type = "checkbox" name="fossa" value="Infection" <% if(fossa.indexOf("Infection")>= 0){%>checked <%}%>>Infection</td></tr>
+	</table><br>
+
+	<%var intrableed=intra_res[0].io11%>
+	IntraOperative Bleed:<br>
+	<input type = "checkbox" name="intrableed" value="Arterial" style="margin-left:20px" <% if(intrableed.indexOf("Arterial")>= 0){ %> checked <%}%>>Arterial<br>
+	<input type = "checkbox" name="intrableed" value="Venous" style="margin-left:20px" <% if(intrableed.indexOf("Venous")>= 0){ %> checked <%}%>>Venous<br>
+	<input type = "checkbox" name="intrableed" value="Intra Osseous" style="margin-left:20px" <% if(intrableed.indexOf("Intra Osseous")>= 0){ %> checked <%}%>>Intra Osseous<br><br>
+
+
+	Gestal Bone Loss:<br>
+	<table>
+	<tr><td>6 Months : </td><td><textarea rows = "1" cols = "50" name = "sixmonths" value=""><%=intra_res[0].io12%></textarea><br></td></tr>
+	<tr><td>1 Year   :</td><td> <textarea rows = "1" cols = "50" name = "oneyear" value=""><%=intra_res[0].io13%></textarea><br></td></tr>
+	<tr><td>3 Years  :</td><td> <textarea rows = "1" cols = "50" name = "threeyears" value=""><%=intra_res[0].io14%></textarea><br></td></tr>
+	<tr><td>5 Years  : </td><td><textarea rows = "1" cols = "50" name = "fiveyears" value=""><%=intra_res[0].io15%></textarea><br></td></tr>
+	<tr><td>10 Years : </td><td><textarea rows = "1" cols = "50" name = "tenyears" value=""><%=intra_res[0].io16%></textarea><br></td></tr>
+	</table>
+
+	<%var implantstability=intra_res[0].io17%>
+	Implant Stability/ISQ:<br>
+	<input type = "checkbox" style="margin-left:20px"  name="implantstability" value="lessthan 35" <% if(implantstability.indexOf("lessthan 35")>= 0){ %> checked <%}%>>lessthan 35<br>
+	<input type = "checkbox" style="margin-left:20px" name="implantstability" value="35-50" <% if(implantstability.indexOf("35-50")>= 0){ %> checked <%}%>>35-50<br>
+	<input type = "checkbox" style="margin-left:20px" name="implantstability" value="greaterthan 50" <% if(implantstability.indexOf("greaterthan 50")>= 0){ %> checked <%}%>>greaterthan 50<br><br>
+
+	<%var implantdiameter=intra_res[0].io18%>
+	Implant Diameter:<br>
+	<input type = "checkbox" style="margin-left:20px" name="implantdiameter" value="3mm" <% if(implantdiameter.indexOf("3mm")>= 0){ %> checked <%}%>>lessthan 35<br>
+
+	<input type = "checkbox" style="margin-left:20px" name="implantdiameter" value="3.5mm" <% if(implantdiameter.indexOf("3.5mm")>= 0){ %> checked <%}%>>lessthan 35<br>
+
+	<input type = "checkbox" style="margin-left:20px" name="implantdiameter" value="3.7mm" <% if(implantdiameter.indexOf("3.7mm")>= 0){ %> checked <%}%>>lessthan 35<br>
+
+	<input type = "checkbox" style="margin-left:20px" name="implantdiameter" value="4mm" <% if(implantdiameter.indexOf("4mm")>= 0){ %> checked <%}%>>lessthan 35<br>
+
+	<input type = "checkbox" style="margin-left:20px" name="implantdiameter" value="4.2mm" <% if(implantdiameter.indexOf("4.2mm")>= 0){ %> checked <%}%>>lessthan 35<br>
+
+	<input type = "checkbox" style="margin-left:20px" name="implantdiameter" value="4.5mm" <% if(implantdiameter.indexOf("4.5mm")>= 0){ %> checked <%}%>>lessthan 35<br>
+
+	<input type = "checkbox" style="margin-left:20px" name="implantdiameter" value="5mm" <% if(implantdiameter.indexOf("5mm")>= 0){ %> checked <%}%>>lessthan 35<br>
+
+	<input type = "checkbox" style="margin-left:20px" name="implantdiameter" value="greaterthan 5mm" <% if(implantdiameter.indexOf("greaterthan 5mm")>= 0){ %> checked <%}%> >greaterthan 5mm <br><br>
+
+	<%var implantlength=intra_res[0].io19 %>
+	Implant Length:<br>
+	<input type = "checkbox" style="margin-left:20px" name="implantlength" value="8mm - 8.5 mm" <% if(implantlength == "8mm - 8.5 mm"){%> checked <%}%>>8mm - 8.5 mm<br>
+	<input type = "checkbox" style="margin-left:20px" name="implantlength" value="10mm" <% if(implantlength == "10mm"){%> checked <%}%>>10mm<br>
+	<input type = "checkbox" style="margin-left:20px" name="implantlength" value="11mm-11.5mm" <% if(implantlength == "11mm-11.5mm"){%> checked <%}%> >11mm-11.5mm<br><br>
+
+
+	<%var implantplaced=intra_res[0].io20 %> 
+	Type of implant placed:<br>
+	<input type = "radio" style="margin-left:20px" name="implantplaced" value="Cylinderical" <% if(implantplaced == "Cylinderical"){%> checked <%}%>>Cylinderical<br>
+	<input type = "radio" style="margin-left:20px" name="implantplaced" value="Tapered" <% if(implantplaced == "Tapered"){%> checked <%}%>>Tapered<br><br>
+	<table>
+
+
+	<tr><td>Crystal / Sub Crystal placement:</td></tr>
+	<tr><td>Fracture of Buccal Cortical Plate:</td><td><textarea rows = "1" cols = "50" value="" name = "buccalcortical"><%=intra_res[0].io21%></textarea><br><br></td></tr>
+	<tr><td>Apical perforation of cortical plate:</td><td><textarea rows = "1" cols = "50" value="" name = "corticalplate"><%=intra_res[0].io22%></textarea><br><br></td></tr>
+	<tr><td>Dislodgement of implant into sinus:</td><td><textarea rows = "1" cols = "50" value="" name = "implantsinus"><%=intra_res[0].io23%></textarea><br><br></td></tr>
+	<tr><td>Spinning of implant:</td><td><textarea rows = "1" cols = "50" value="" name = "spinningofimplant"><%=intra_res[0].io24%></textarea><br><br></td></tr>
+	<tr><td>Granulation tissue in preserved socket:</td><td><textarea rows = "1" cols = "50" value="" name = "reservedsocket"><%=intra_res[0].io25%></textarea><br><br></td></tr>
+	<tr><td>Damage to nutrient canal:</td><td><textarea rows = "1" cols = "50" value="" name = "nutrientcanal"><%=intra_res[0].io26%></textarea><br><br></td></tr>
+	<tr><td>Excessive Bleeding:</td><td><textarea rows = "1" cols = "50" value="" name = "excessivebleeding"><%=intra_res[0].io27%></textarea><br><br></td></tr>
+	</table><br>
+
+
+	<table>
+	Osteotomy type:<br>
+	<tr><td>Drill:</td><td><input type = "text" name="drill" value="<%=intra_res[0].io28%>"><br></td></tr>
+	<tr><td>Ridge Split / Expansion:</td><td><input type = "text" name="ridgesplit" value="<%=intra_res[0].io29%>"><br></td></tr>
+	<tr><td>Stepped osteotomy:</td><td><input type = "text" name="steppedosteotomy" value="<%=intra_res[0].io30%>"><br></td></tr>
+	<tr><td>with piezo tips:</td><td><input type = "text" name="piezotips" value="<%=intra_res[0].io31%>"><br></td></tr>
+	<tr><td>Bone tap:</td><td><input type = "text" name="bonetap" value="<%=intra_res[0].io32%>"><br></td></tr>
+	<tr><td>Counter Sink:</td><td><input type = "text" name="countersink" value="<%=intra_res[0].io33%>"><br></td></tr>
+	<tr><td>Bone Condensation:</td><td><input type = "text" name="bonecondesation" value="<%=intra_res[0].io34%>"></td></tr>
+	</table><br>
+
+
+	Soft Tissue Closure:<br>
+	<table>
+	<tr><td>Tension free flap:</td><td><input type = "text" name="tensionfreeflap" value="<%=intra_res[0].io35%>"></td></tr>
+	<tr><td>Pedicle graft:</td><td><input type = "text" name="pediclegraft" value="<%=intra_res[0].io36%>"></td></tr>
+	<tr><td>Flap dehiscence:</td><td><input type = "text" name="flapdehiscence" value="<%=intra_res[0].io37%>"></td></tr>
+	<tr><td>APRF Used:</td><td><input type = "text" name="aprfused" value="<%=intra_res[0].io38%>"></td></tr>
+	<tr><td>Type of suturing:</td><td><input type = "text" name="typeofsuturing" value="<%=intra_res[0].io39%>"></td></tr>
+	</table>
+
+
+	Requirement of Graft material:<br>
+	<% var Grafted=intra_res[0].io40 %>
+
+	<br><input type = "radio" style="margin-left:40px" name="Grafted" onclick="show1()" value="Grafted" <% if(Grafted.indexOf("Grafted")>= 0){ %> checked <%}%> > Grafted:
+	<br>
+	<div id="graftdiv" <%if(Grafted.indexOf("No Graft")>=0){  %>style="display: none"<%}%>>
+	<input type = "radio" style="margin-left:40px" name="radioGrafted" id="graft1" value="Auto Genius" <% if(Grafted.indexOf("Auto Genius")>= 0){ %> checked <%}%>>Auto Genius<br>
+	<input type = "radio" style="margin-left:40px" name="radioGrafted" id="graft2" value="AlloGraft" <% if(Grafted.indexOf("AlloGraft")>= 0){ %> checked <%}%>>AlloGraft<br>
+	<input type = "radio" style="margin-left:40px" name="radioGrafted" id="graft3" value="XenoGraft" <% if(Grafted.indexOf("XenoGraft")>= 0){ %> checked <%}%>>XenoGraft<br>
+	<input type = "radio" style="margin-left:40px" name="radioGrafted" id="graft4" value="AlloPlast" <% if(Grafted.indexOf("AlloPlast")>= 0){ %> checked <%}%>>AlloPlast<br>
+
+	<textarea rows="1" cols="50" style="margin-left:40px" name="grafttext" id="grafttext" value=""><% if(Grafted.split("*").length== 3){ %> <%= Grafted.split("*")[2]%> <%}%> </textarea><br><br>
+	</div>
+	<input type = "radio" style="margin-left:40px" name="Grafted"  onclick="hide()" value="No Graft" <% if(Grafted.indexOf("No Graft")>= 0){ %> checked <%}%>>No Graft<br><br>
+
+
+	Use of titanium mesh for grafting:<br>
+	<%var mesh=intra_res[0].io41 %>
+	<input type = "radio" style="margin-left:20px" name="mesh" value="Exposure of titanium mesh" <% if(mesh.indexOf("Exposure of titanium mesh")>= 0){ %> checked <%}%>>Exposure of titanium mesh<br>
+	<input type = "radio" style="margin-left:20px" name="mesh" value="Non exposure of titanium mesh" <% if(mesh.indexOf("Non exposure of titanium mesh")>= 0){ %> checked <%}%>>Non exposure of titanium mesh<br>
+
+
+	Ridge split:<br>
+	<%var ridge=intra_res[0].io42 %>
+	<input type = "radio" style="margin-left:20px" name="ridge" value="With peizo instruments" <% if(ridge.indexOf("With peizo instruments")>= 0){ %> checked <%}%>>With peizo instruments<br>
+	<input type = "radio" style="margin-left:20px" name="ridge" value="With hand instruments" <% if(ridge.indexOf("With hand instruments")>= 0){ %> checked <%}%>>With hand instruments<br>
+
+
+	Ridge augmentation:<br>
+	<% var ridge_aug0=intra_res[0].io43%>
+	<input type = "radio" style="margin-left:20px" name="ridge_aug0" value="0-2mm" <% if(ridge_aug0 == "0-2mm"){%> checked <%}%>>0-2mm<br>
+	<input type = "radio" style="margin-left:20px" name="ridge_aug0" value="2-4mm" <% if(ridge_aug0 == "2-4mm"){%> checked <%}%>>2-4mm<br>
+	<input type = "radio" style="margin-left:20px" name="ridge_aug0" value="4-6mm" <% if(ridge_aug0 == "8mm - 8.5 mm"){%> checked <%}%>>4-6mm<br>
+	<input type = "radio" style="margin-left:20px" name="ridge_aug0" value="greater than 6mm" <% if(ridge_aug0 == "4-6mm"){%> checked <%}%>>greater than 6mm<br><br><br>
+	<% var ridge_aug1=intra_res[0].io44%>
+	<input type = "radio" style="margin-left:20px" name="ridge_aug1" value="Vertical" <% if(ridge_aug1 == "Vertical"){%> checked <%}%>>Vertical<br>
+	<input type = "radio" style="margin-left:20px" name="ridge_aug1" value="Horizontal" <% if(ridge_aug1 == "Horizontal"){%> checked <%}%>>Horizontal<br>
+	<input type = "radio" style="margin-left:20px" name="ridge_aug1" value="Block graft" <% if(ridge_aug1 == "Block graft"){%> checked <%}%>>Block graft<br>
+	<input type = "radio" style="margin-left:20px" name="ridge_aug1" value="Particular graft with ti mesh" <% if(ridge_aug1 == "Particular graft with ti mesh"){%> checked <%}%>>Particular graft with ti mesh<br>
+	<input type = "radio" style="margin-left:20px" name="ridge_aug1" value="Particular graft with memebrane" <% if(ridge_aug1 == "Particular graft with memebrane"){%> checked <%}%>>Particular graft with memebrane<br>
+
+
+	Sinus lift:<br>
+	Amount of sinus lift:<input type = "text" name="sinusamount" value="<%=intra_res[0].io45%>"><br>
+	Direct:<br>
+	<%var direct_sinus=intra_res[0].io46%>
+	<input type = "radio" style="margin-left:40px" name="direct_sinus" value="With implant" <% if(direct_sinus == "With implant"){%> checked <%}%>>With implant<br>
+	<input type = "radio" style="margin-left:40px" name="direct_sinus" value="Delayed implant" <% if(direct_sinus == "Delayed implan"){%> checked <%}%>>Delayed implant<br>
+	<input type = "radio" style="margin-left:40px"name="direct_sinus" value="bleeding" <% if(direct_sinus == "bleeding"){%> checked <%}%>>bleeding<br>
+	<input type = "radio" style="margin-left:40px"name="direct_sinus" value="tear of membrane" <% if(direct_sinus == "tear of membrane"){%> checked <%}%>>tear of membrane<br>
+	<input type = "radio" style="margin-left:40px"name="direct_sinus" value="infection" <% if(direct_sinus == "infection"){%> checked <%}%>>infection<br>
+	Indirect:<br>
+	<%var indirect_sinus=intra_res[0].io47%>
+	<input type = "radio" style="margin-left:40px" name="indirect_sinus" value="With prf" <% if(indirect_sinus == "With prf"){%> checked <%}%>>With prf<br>
+	<input type = "radio" style="margin-left:40px" name="indirect_sinus" value="with grafting" <% if(indirect_sinus == "with grafting"){%> checked <%}%>>with grafting<br>
+	<input type = "radio" style="margin-left:40px" name="indirect_sinus" value="tear of memebrane" <% if(indirect_sinus == "tear of memebrane"){%> checked <%}%>>tear of memebrane<br>
+	<input type = "radio" style="margin-left:40px" name="indirect_sinus" value="implant failure" <% if(indirect_sinus == "implant failure"){%> checked <%}%>>implant failure<br>
+	<input type = "radio" style="margin-left:40px" name="indirect_sinus" value="infection" <% if(indirect_sinus == "infection"){%> checked <%}%>>infection<br>
+
+
+	Nerve repositioning:<br><table>
+	<%var nerve_repositioning=intra_res[0].io48%>
+	<tr><td><input type = "radio" style="margin-left:20px" name="nerve_repositioning" value="Lateralization" <% if(nerve_repositioning == "Lateralization"){%> checked <%}%>>Lateralization<br></td></tr>
+	<tr><td><input type = "radio" style="margin-left:20px" name="nerve_repositioning" value="Transposition" <% if(nerve_repositioning == "Transposition"){%> checked <%}%>>Transposition<br></td></tr></table>
+
+
+	Donor site:<textarea rows = "1" cols = "50" name = "six_months" value=""><%=intra_res[0].io49%></textarea>
+	<table>
+	<tr><td>quality of graft:</td><td><input type = "text" name="quality_of_graft" value="<%=intra_res[0].io50%>"><br></td></tr>
+	<tr><td>quantity of graft:</td><td><input type = "text" name="quantity_of_graft" value="<%=intra_res[0].io51%>"><br></td></tr>
+	<tr><td>morbidity</td><td><input type = "text" name="morbidity" value="<%=intra_res[0].io52%>"><br></td></tr>
+	<tr><td>bleed</td><td><input type = "text" name="bleed" value="<%=intra_res[0].io53%>"><br></td></tr>
+	</table>
+
+
+	Socket preservation:<br>
+	<%var socket=intra_res[0].io54%>
+	<table>
+	<tr><td><input type = "radio" style="margin-left:20px" name="socket" value="PRF" <% if(socket == "PRF"){%> checked <%}%>>PRF<br></td></tr>
+	<tr><td><input type = "radio" style="margin-left:20px" name="socket" value="bone graft" <% if(socket == "bone graft"){%> checked <%}%>>bone graft<br></td></tr>
+	<tr><td><input type = "radio" style="margin-left:20px" name="socket" value="membrane" <% if(socket == "membrane"){%> checked <%}%>>membrane<br><br></td></tr>
+	</table>
+
+
+	<%var socket1=intra_res[0].socketcheck%>
+	<input type="checkbox" name="socketcheck" id="socketcheck" onClick="modify()" <% if(socket1 == "yes"){%> checked <%}%>/> Socket shield technique:<br>
+	<div id="divsocket">
+	<table>
+	<tr><td>Root length:</td><td><input type = "text" value="<%=intra_res[0].io55%>" name="Root_length"><br><br></td></tr>
+	<tr><td>Root width:</td><td><input type = "text" value="<%=intra_res[0].io56%>" name="Root_width" ><br><br></td></tr>
+	<tr><td>Thickness of shield:</td><td><input type = "text" value="<%=intra_res[0].io57%>" name="Thickness_of_shield"><br><br></td></tr>
+	<tr><td>Condition of adjacent tooth:</td><td><input type = "text" value="<%=intra_res[0].io58%>" name="Condition_of_adjacent_tooth"><br><br></td></tr>
+	</table> 
+
+
+	Soft tissue grafting:<br>
+	<table>
+	<tr><td>Connective tissuegraft:</td><td><input type = "text" value="<%=intra_res[0].io59%>" name="Connective_tissuegraft"><br><br></td></tr>
+	<tr><td>Free gingival graft:</td><td><input type = "text" value="<%=intra_res[0].io60%>" name="Free_gingival_graft"><br></td></tr>
+	</table>  
+	<center>
+
+	<br>
+<%}else{%>
+<h3>There is no data</h3>
+<%}%>
+</body>
+</html>

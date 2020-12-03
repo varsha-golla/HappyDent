@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>AssisDent</title>
+		<style type="text/css">
+			table , td,th{
+				border: 1px solid black;
+			}
+		</style>
+        <script type="text/javascript">
+			function showDiv(a){
+				if(document.getElementById('div'+a).style.display=="none")
+					document.getElementById('div'+a).style.display="block";
+				else
+					document.getElementById('div'+a).style.display="none";
+			}
+		</script>
+	</head>
+	<body bgcolor="#F0FFFF" >
+		<% include index.ejs%><br>
+		<center><h1>DETAILS BY QUERY</h1></center>
+		<form action="/fetchDetails" method="get">
+			<% include Pre_Query_Details.ejs %>
+			<% include Intra_Query_Details.ejs %>
+			<% include Post_Query_Details.ejs %>
+			<br>
+			<!-- <center><a href="/fetchDetails"><button class="btn"><h3>SUBMIT</h3></button></a></center> -->
+			<center><input type="button" value="Submit" class="btn"></center>
+		</form>
+	</body>
+</html>
+

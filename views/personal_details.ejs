@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AssisDent</title>
+		<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="demo.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+</head>
+<body style="background-color: #F0FFFF">
+	<% include index.ejs%>
+	<br>
+
+<form action="/PersonalDetailsSubmit" method="get">
+	<center><h3>Personal Details</h3></center>
+	
+<center>
+	<table border="2">
+	<tr>
+		<td>Name:</td>
+		<td><input type="text" name="name" width="50"  style="background-color: #F0FFFF" class="form-control"></td>
+	</tr>
+	<tr>
+		<td>Age:</td>
+		<td><input type="number" name="age" style="background-color: #F0FFFF" class="form-control"></td>
+	</tr>
+	<tr>
+		<td>Gender:</td>
+		<td><input type="radio" name="gender"  value="Female">Female<br>
+		<input type="radio" name="gender" value="Male">Male<br></td>
+	</tr>
+	<tr>
+		<td>OP number:</td>
+		<td><input type="text" name="op_num" style="background-color: #F0FFFF" class="form-control"></td>
+	</tr>
+	<tr>
+		<td>Mobile Number:</td>
+		<td><input type="text" name="mobile" style="background-color: #F0FFFF" class="form-control"></td>
+	</tr>
+	<tr>
+		<td>Email Address:</td>
+		<td><input type="text" name="email" style="background-color: #F0FFFF" class="form-control"></td>
+	</tr>
+	<tr>
+		<td>Occupation:</td>
+		<td><input type="text" name="occ" style="background-color: #F0FFFF" class="form-control"></td>
+	</tr>
+	<tr>
+		<td>Address:</td>
+		<td><textarea rows = "5" cols = "50" name = "address" style="background-color: #F0FFFF" class="form-control"></textarea></td>
+	</tr>
+</table>
+<% if(exists=="yes") {%>
+<h3 style="color: red">This OP Number Already Exists!!!</h3>
+<%}else if(exists=="null"){%> 
+<h3 style="color:green">Please Enter the OP Number</h3>
+<%}%>
+</center><br><br>
+<center><input type="submit" value="Next"margin: 100" class="btn btn-default"></center>
+</form>
+<!-- <div>
+	<form action="/beforeupload" method="get">
+		<input type="submit" name="Uploadpic">
+	</form>
+</div> -->
+<!-- <h1><a href="./beforeupload">Uploadpic</a></h1> -->
+</body>
+</html>

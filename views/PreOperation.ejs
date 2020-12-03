@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AssisDent</title>
+	<% include index.ejs%>
+	<script>
+                   function ifYes(a){
+                        document.getElementById('div'+a).style.display="block";
+                  }
+                 function ifNo(a){
+                        document.getElementById('div'+a).style.display="none";
+                  }
+                 </script>
+</head>
+<body style="background-color: #F0FFFF" >
+	<form action="/PreOperationSubmit" method="action">
+	<h3>PREOPERATION DETAILS</h3>
+
+
+Existing Medical Conditions
+<ul>
+	<li>Diabetes<br>
+		<input type="radio" name="diabetes" value="yes" background-color = "#ccc">yes<br>
+		<input type="radio" name="diabetes" value="no" >no<br>
+	</li><br>
+	<li>Hypertension<br>
+		<input type="radio" name="Hypertension" value="yes">yes<br>
+		<input type="radio" name="Hypertension" value="no">no<br>
+	</li><br>
+	<li>Cardio Vascular disorders: 
+		<textarea rows = "1" cols = "50" name = "cvd" value="" style="background-color: #F0FFFF">cardio</textarea>
+	</li><br>
+	<li>Bleeding disorders:<br>
+		<input type="radio" name="Bleeding_disorders" onClick="ifYes(0)" value="yes">yes<br>
+		<input type="radio" name="Bleeding_disorders" onClick="ifNo(0)" value="no">no<br>
+		<div id="div0" style="display:none;"><textarea rows = "1" cols = "50" name = "Bleeding_disorderstext" value="" style="background-color: #F0FFFF"></textarea><br></div>
+	</li><br>
+	<li>Thyroid disorders:<br>
+		<input type="radio" name="thyroid_disorders" onClick="ifYes(1)" value="yes">yes<br>
+		<input type="radio" name="thyroid_disorders" onClick="ifNo(1)" value="no">no<br>
+		<div id="div1" style="display:none;"> <textarea rows = "1" cols = "50" value="" name = "Thyroid" style="background-color: #F0FFFF"></textarea><br></div>
+	</li><br>
+	<li>Bone disorders:<br>
+		<input type="radio" name="bone_disorders" onClick="ifYes(2)" value="yes">yes<br>
+		<input type="radio" name="bone_disorders" onClick="ifNo(2)" value="no">no<br>
+		<div id="div2" style="display:none;"><textarea rows = "1" cols = "50" name = "Bone" value="" style="background-color: #F0FFFF"></textarea><br></div>
+	</li><br>
+	<li>Neuromuscular disorders:<br>
+		<input type="radio" name="Neuromuscular" onClick="ifYes(3)" value="yes">yes<br>
+		<input type="radio" name="Neuromuscular" onClick="ifNo(3)" value="no">no<br>
+		<div id="div3" style="display:none;"><textarea rows = "1" value="" cols = "50" name = "neuromuscular" style="background-color: #F0FFFF"></textarea><br></div>
+	</li><br>
+	<li>Mentally Challanged<br>
+		<input type="radio" name="Mentally" value="yes">yes<br>
+		<input type="radio" name="Mentally" value="no">no<br>
+	</li><br>
+	<li>Congential disorders: 
+		<textarea rows = "1" cols = "50" name = "Congential_description" style="background-color: #F0FFFF"></textarea><br>
+	</li><br>
+	<li>Others: 
+		<textarea rows = "1" cols = "50" name = "medical_conditions_descriptions" style="background-color: #F0FFFF"></textarea><br>
+	</li><br>
+	<li>Blood Indices:<br><br>
+		<ul>
+			<li>Platlet Count:  <input type="text" value="" name="Plateletdesc" style="background-color: #F0FFFF"><br>
+			<input type="radio" name="Platelet" value="Normal : 1.5 to 4.5 lakhs/cumm">Normal : 1.5 to 4.5 lakhs/cumm<br>
+			<input type="radio" name="Platelet" value=">4.5 lakhs/cumm">>4.5 lakhs/cumm<br>
+			<input type="radio" name="Platelet" value="<1.5 lakhs/cumm"> <1.5 lakhs/cumm<br>
+		</li><br>
+		<li>RBC Count:  <input type="text"  value="" name="RBCdesc" style="background-color: #F0FFFF"><br>
+			<input type="radio" name="RBC" value="Normal : 4.5 to 5.5 mill/cumm">Normal : 4.5 to 5.5 mill/cumm<br>
+			<input type="radio" name="RBC" value="< 4.5  mill/cumm"> < 4.5  mill/cumm<br>
+			<input type="radio" name="RBC" value=">5.5 mill/cumm">>5.5 mill/cumm<br>
+		</li><br>
+		<li>WBC Count:  <input type="text" value="" name="WBCdesc" style="background-color: #F0FFFF"><br>
+			<input type="radio" name="WBC" value="Normal : 5,000 to 10,000 cells/cumm">Normal : 5,000 to 10,000 cells/cumm<br>
+			<input type="radio" name="WBC" value="< 5,000 cells/cumm">< 5,000 cells/cumm<br>
+			<input type="radio" name="WBC" value=">10,000 cells/cumm">>10,000 cells/cumm<br>
+		</li><br>
+		<li>INR:  <input type="text" value="" name="INRdesc" style="background-color: #F0FFFF"><br>
+			<input type="radio" name="INR" value="Normal : 1.1 or below">Normal : 1.1 or below<br>
+			<input type="radio" name="INR" value=">1.1">>1.1<br>
+		</li><br>
+		<li>RBS:  <input type="text" name="RBSdesc" value="" style="background-color: #F0FFFF"><br>
+			<input type="radio" name="RBS" value="Normal : 70 to 170 mg/dl">Normal : 70 to 170 mg/dl<br>
+			<input type="radio" name="RBS" value="< 70 mg/dl">< 70 mg/dl<br>
+			<input type="radio" name="RBS" value="> 170 mg/dl">> 170 mg/dl<br>
+		</li><br></ul>
+		<li>HbsAg: 
+			<textarea rows = "1" cols = "50" value="" name = "HbsAgdesc" style="background-color: #F0FFFF"></textarea><br>
+		</li><br>
+		<li>HIV: 
+			<textarea rows = "1" cols = "50" value="" name = "HIVdesc" style="background-color: #F0FFFF"></textarea><br>
+		</li><br>
+		<li>HCV: 
+			<textarea rows = "1" cols = "50" value="" name = "HCVdesc" style="background-color: #F0FFFF"></textarea><br>
+		</li><br>
+		<li>Others: 
+			<textarea rows = "1" cols = "50" value="" name = "otherdesc" style="background-color: #F0FFFF"></textarea><br>
+		</li><br>
+	</li>
+	<li>Habits:<br><br>
+		<ul>
+			<li>Bruxism: <input type="text" value="" name="Bruxismdesc" style="background-color: #F0FFFF"><br>
+				<input type="radio" name="Bruxism" value="yes">yes<br>
+				<input type="radio" name="Bruxism" value="no">no<br>
+			</li><br>
+			<li>Smoking:<br>
+				<input type="radio" name="Smoking" onClick="ifYes(4)" value="yes">yes<br>
+				<input type="radio" name="Smoking" onClick="ifNo(4)" value="no">no<br>
+				<div id="div4" style="display:none;">
+				Frequency : <input type="text" name="Smokingfreq" value="" style="background-color: #F0FFFF"><br><br>
+				Duration : <input type="text" name="Smokingduration" value="" style="background-color: #F0FFFF"><br></div>
+			</li><br>
+			<li>Pan Chewing :  <input type="text" name="panchewingdesc" style="background-color: #F0FFFF"><br>
+				<input type="radio" name="Pan" value="yes">yes<br>
+				<input type="radio" name="Pan" value="no">no<br>
+			</li><br>
+			<li>Tongue Thrusting:  <input type="text" name="Thrustingdesc" style="background-color: #F0FFFF"><br>
+				<input type="radio" name="Thrusting" value="yes">yes<br>
+				<input type="radio" name="Thrusting" value="no">no<br>
+			</li><br>
+			<li>Alcohol:  <input type="text" name="Alcoholdesc" style="background-color: #F0FFFF"><br>
+				<input type="radio" name="Alcohol" value="yes">yes<br>
+				<input type="radio" name="Alcohol" value="no">no<br>
+			</li><br>
+			<li>Others: 
+				<textarea rows = "1" cols = "50" name = "other_habits_desc" style="background-color: #F0FFFF"></textarea><br>
+			</li><br>
+		</ul>
+	</li>
+	<li>Oral Hygiene measures:<br>
+		<ul>
+			<li>Brushing:<br><ul>
+				<li>Frequency: <input type="text" name="Brushing" style="background-color: #F0FFFF"><br>
+				</li><br>
+				<li>Method:<br><ul>
+					<li>Flossing: <input type="text" name="Flossing" style="background-color: #F0FFFF"><br></li><br>
+					<li>Mouth wash: <input type="text" name="Mouthwash" style="background-color: #F0FFFF"><br></li></ul>
+				</li><br>
+			</ul>
+			</li>
+			<br>
+		</ul>
+	</li><br>
+	<li>Soft tissue type:<br>
+		<input type="radio" name="Softtissue" value="Thin biotype">Thin biotype<br>
+		<input type="radio" name="Softtissue" value="Thick biotype">Thick biotype<br>
+		<input type="radio" name="Softtissue" value="Firm and resilient">Firm and resilient<br>
+		<input type="radio" name="Softtissue" value="Inflamed">Inflamed<br>
+		<input type="radio" name="Softtissue" value="Others">Others<br>
+	</li><br>
+	<li>Occlusal Scheme:<br>
+		<ul>
+			<li>Mutually protected/group function:<br>
+				<ul>
+					<li>Right:<br>
+						<input type="radio" name="groupright" value="Canine guided">Canine guided<br>
+						<input type="radio" name="groupright" value="Group function">Group function<br>	
+					</li>
+					<li>Left:<br>
+						<input type="radio" name="groupleft" value="Canine guided">Canine guided<br>
+						<input type="radio" name="groupleft" value="Group function">Group function<br>	
+					</li>
+				</ul>
+			</li><br>
+			<li>Interferences:<br>
+				<ul>
+					<li>Right:<br>
+						<input type="radio" name="Interferencesright" value="Working">Working<br>
+						<input type="radio" name="Interferencesright" value="Non Working">Non Working<br>	
+					</li>
+					<li>Left:<br>
+						<input type="radio" name="Interferencesleft" value="Working">Working<br>
+						<input type="radio" name="Interferencesleft" value="Non Working">Non Working<br>	
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li><br>
+	Protruisive:<input type="text" value="" name="protruisive" style="background-color: #F0FFFF">
+	<li>Seiberts classification of edentulous ridge:<br>
+
+		<input type="radio" name="ridge" value="Class-1">Class-1<br>
+		<input type="radio" name="ridge" value="Class-2">Class-2<br>
+		<input type="radio" name="ridge" value="Class-3">Class-3<br>
+		<input type="radio" name="ridge" value="Class-4">Class-4<br>
+	</li><br>
+	<li>Immediate Implants:<br>
+		<input type="radio" name="implant" value="Endodontically treated">Endodontically treated<br>
+		<input type="radio" name="implant" value="Periodontal compromised">Periodontal compromised<br>
+		<input type="radio" name="implant" value="Active Infection">Active Infection<br>
+		<input type="radio" name="implant" value="Root resorption">Root resorption<br>
+		<input type="radio" name="implant" value="Peri Apical Lesions">Peri Apical Lesions<br>
+		<input type="radio" name="implant" value="Trauma">Trauma<br>
+		<input type="radio" name="implant" value="Others">Others<br>
+	</li><br>
+	<li>Delayed implant placement : <input type="text" name="Delayedimplant" value="" style="background-color: #F0FFFF"><br>
+	</li><br>
+	<li>Amount of keratinized tissue - 
+		Buccal:<input type="text" name="Buccal" style="background-color: #F0FFFF"><br><br>
+		Lingual <input type="text" name="Lingual" style="background-color: #F0FFFF"><br><br>
+		Residual alvelor ridge <input type="text" name="Residual" style="background-color: #F0FFFF"><br>	
+	</li>
+</ul>
+<b>Surgical Notes:<br></b>
+	<textarea rows = "15" value="" cols = "50" name = "Surgicalnotes" style="background-color: #F0FFFF"></textarea>
+<center><input type="submit" class="btn btn-info" value="NEXT" name="" style="margin:100px">
+</form>
+</body>
+</html>

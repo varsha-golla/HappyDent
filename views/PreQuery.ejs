@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>AssisDent</title>
+</head>
+<body style="background-color: #F0FFFF">
+
+	<%if(pre_res.length>0){%>
+	<h3>PREOPERATIVE DETAILS</h3>
+	Existing Medical Conditions
+<ul>
+	<%var a=pre_res[0].pr1%>
+		<li>Diabetes<br>
+		<input type="radio" name="diabetes" value="yes" <%if(a=="yes"){%> <%="checked"%><%}%>/>yes<br>
+		<input type="radio" name="diabetes" value="no" <%if(a=="no"){%> <%="checked"%><%}%>>no<br>
+	</li><br>
+	<%var a=pre_res[0].pr2%>
+		<li>Hypertension<br>
+			<input type="radio" name="Hypertension" value="yes" <%if(a=="yes"){%> <%="checked"%><%}%>>yes<br>
+			<input type="radio" name="Hypertension" value="no" <%if(a=="no"){%> <%="checked"%><%}%>>no<br>
+		</li><br>
+	<li>Cardio Vascular disorders: 
+		<textarea rows = "1" cols = "50" name = "cvd" value=""><%= pre_res[0].pr40%>
+         </textarea>
+	</li><br>
+	<%var d=pre_res[0].pr3%>
+	<%if(d=="undefind*"){%>
+		<li>Bleeding disorders:<br>
+			<input type="radio" name="Bleeding_disorders" onClick="ifYes(0)" value="yes" id="yess0" >yes<br>
+			<input type="radio" name="Bleeding_disorders" onClick="ifYes(0)" value="no" id="noo0">no<br>
+			<div id="div0" style="display:none;"><textarea rows = "1" cols = "50" name = "Bleeding_disorderstext" value=""></textarea><br></div>
+		</li><br>
+	<%}%>
+	<%var a=pre_res[0].pr3.length%>
+	<%if(a<=3 && d!="undefined*"){ %>
+		<li>Bleeding disorders:<br>
+			<input type="radio" name="Bleeding_disorders" onClick="ifYes(0)" value="yes" id="yess0" >yes<br>
+			<input type="radio" name="Bleeding_disorders" onClick="ifYes(0)" value="no" id="noo0"checked>no<br>
+			<div id="div0" style="display:none;"><textarea rows = "1" cols = "50" name = "Bleeding_disorderstext" value=""></textarea><br></div>
+		</li><br>
+	<%}%>
+	<%if(a>3 && d!="undefined*") {%>
+			<% var a = pre_res[0].pr3.length-1%>
+			<% var str=""%> 
+			<%for(var i=4;i<=a;i++){%>
+				<%str=str+pre_res[0].pr3[i]%>
+			<%}%>
+		<li>Bleeding disorders:<br>
+			<input type="radio" name="Bleeding_disorders" onChange="ifYes(0)"  value="yes"id="yess0" checked>yes<br>
+			<input type="radio" name="Bleeding_disorders" onClick="ifYes(0)" value="no" id="noo0" >no<br>
+			<div id="div0" style="display:block;"><textarea rows = "1" cols = "50" name = "Bleeding_disorderstext" value=""><%= str%></textarea></div>
+		</li><br>
+	<%}%>
+	<%var d=pre_res[0].pr4%>
+	<%if(d=="undefined*"){%>
+		<li>Thyroid disorders:<br>
+			<input type="radio" name="thyroid_disorders" onClick="ifYes(1)" value="yes" id="yess1">yes<br>
+			<input type="radio" name="thyroid_disorders" onClick="ifYes(1)" value="no" id="noo1">no<br>
+			<div id="div1" style="display:none;"> <textarea rows = "1" cols = "50" value="" name = "Thyroid"></textarea><br></div>
+		</li><br>
+	<%}%>
+	<% var a=pre_res[0].pr4.length%>
+	<% if(a<=3 &&  d!="undefined*"){%>
+		<li>Thyroid disorders:<br>
+			<input type="radio" name="thyroid_disorders" onClick="ifYes(1)" value="yes" id="yess1">yes<br>
+			<input type="radio" name="thyroid_disorders" onClick="ifYes(1)" value="no" id="noo1" checked>no<br>
+			<div id="div1" style="display:none;"> <textarea rows = "1" cols = "50" value="" name = "Thyroid"></textarea><br></div>
+		</li><br>
+	<% } %>
+	<% if(a>3 && d!="undefined*"){%>
+		<% var a = pre_res[0].pr4.length-1%>
+		<% var str=""%>
+		<%for(var i=4;i<=a;i++){%>
+				<%str=str+pre_res[0].pr4[i]%>
+		<%}%>
+		<li>Thyroid disorders:<br>
+			<input type="radio" name="thyroid_disorders" onClick="ifYes(1)" value="yes" id="yess1" checked>yes<br>
+			<input type="radio" name="thyroid_disorders" onClick="ifYes(1)" value="no" id="noo1" >no<br>
+			<div id="div1" style="display:block;"> <textarea rows = "1" cols = "50" value="" name = "Thyroid"><%=str%></textarea><br></div>
+		</li><br>
+	<%}%>
+	<% var d=pre_res[0].pr5%>
+	<%if(d=="undefined*"){%>
+		<li>Bone disorders:<br>
+			<input type="radio" name="bone_disorders" onClick="ifYes(2)" value="yes" id="yess2">yes<br>
+			<input type="radio" name="bone_disorders" onClick="ifYes(2)" value="no" id="noo2">no<br>
+			<div id="div2" style="display:none;"><textarea rows = "1" cols = "50" name = "Bone" value=""></textarea><br></div>
+		</li><br>
+	<%}%>
+	<%var a=pre_res[0].pr5.length%>
+	<%if(a<=3 && d!="undefined*"){ %>
+		<li>Bone disorders:<br>
+			<input type="radio" name="bone_disorders" onClick="ifYes(2)" value="yes" id="yess2">yes<br>
+			<input type="radio" name="bone_disorders" onClick="ifYes(2)" value="no" id="noo2"checked>no<br>
+			<div id="div2" style="display:none;"><textarea rows = "1" cols = "50" name = "Bone" value=""></textarea><br></div>
+		</li><br>
+	<%}%>
+	<%if(a>3 && d!="undefined*") {%>
+			<% var a = pre_res[0].pr5.length-1%>
+			<% var str=""%> 
+			<%for(var i=4;i<=a;i++){%>
+				<%str=str+pre_res[0].pr5[i]%>
+			<%}%>
+		<li>Bone disorders:<br>
+			<input type="radio" name="bone_disorders" onClick="ifYes(2)" value="yes" id="yess2" checked>yes<br>
+			<input type="radio" name="bone_disorders" onClick="ifYes(2)" value="no" id="noo2">no<br>
+			<div id="div2" style="display:block;"><textarea rows = "1" cols = "50" name = "Bone" value=""><%=str%></textarea><br></div>
+		</li><br>
+	<%}%>
+	<%var d=pre_res[0].pr6%>
+	<%if(d=="undefined*"){%>
+		<li>Neuromuscular disorders:<br>
+			<input type="radio" name="Neuromuscular" onClick="ifYes(3)" value="yes" id="yess3">yes<br>
+			<input type="radio" name="Neuromuscular" onClick="ifYes(3)" value="no" id="noo3" >no<br>
+			<div id="div3" style="display:none;"><textarea rows = "1" value="" cols = "50" name = "neuromuscular"></textarea><br></div>
+		</li><br>
+	<%}%>
+	<%var a=pre_res[0].pr6.length%>
+	<%if(a<=3 && d!="undefined*"){ %>
+	<li>Neuromuscular disorders:<br>
+		<input type="radio" name="Neuromuscular" onClick="ifYes(3)" value="yes" id="yess3">yes<br>
+		<input type="radio" name="Neuromuscular" onClick="ifYes(3)" value="no" id="noo3" checked>no<br>
+		<div id="div3" style="display:none;"><textarea rows = "1" value="" cols = "50" name = "neuromuscular"></textarea><br></div>
+	</li><br>
+	<%}%>
+	<%if(a>3 && d!="undefined*") {%>
+			<% var a = pre_res[0].pr6.length-1%>
+			<% var str=""%> 
+			<%for(var i=4;i<=a;i++){%>
+				<%str=str+pre_res[0].pr6[i]%>
+			<%}%>
+	<li>Neuromuscular disorders:<br>
+		<input type="radio" name="Neuromuscular" onClick="ifYes(3)" value="yes" id="yess3" checked>yes<br>
+		<input type="radio" name="Neuromuscular" onClick="ifYes(3)" value="no" id="noo3">no<br>
+		<div id="div3" style="display:block;"><textarea rows = "1" value="" cols = "50" name = "neuromuscular"><%=str%></textarea><br></div>
+	</li><br>
+	<%}%>
+	<%var a=pre_res[0].pr7%>
+	<% if(a=="yes") {%>
+	<li>Mentally Challanged<br>
+		<input type="radio" name="Mentally" value="yes" checked>yes<br>
+		<input type="radio" name="Mentally" value="no">no<br>
+	</li><br>
+	<% } %>
+	<% if(a=="no") {%>
+	<li>Mentally Challanged<br>
+		<input type="radio" name="Mentally" value="yes" >yes<br>
+		<input type="radio" name="Mentally" value="no" checked>no<br>
+	</li><br>
+	<% } %>
+	<li>Congential disorders: 
+		<textarea rows = "1" cols = "50" name = "Congential_description"><%= pre_res[0].pr8%></textarea><br>
+	</li><br>
+	<li>Others: 
+		<textarea rows = "1" cols = "50" name = "medical_conditions_descriptions" value=""><%= pre_res[0].pr9%></textarea><br>
+	</li><br>
+	<li>Blood Indices:<br><br>
+		<ul>
+			<% var a=pre_res[0].pr10.split("*")%>
+			<li>Platlet Count:  <input type="text" value="<%=a[1]%>" name="Plateletdesc"><br>
+			<input type="radio" name="Platelet" value="Normal : 1.5 to 4.5 lakhs/cumm" <%if(a[0]=="Normal : 1.5 to 4.5 lakhs/cumm"){%> <%="checked"%><%}%>/>Normal : 1.5 to 4.5 lakhs/cumm<br>
+			<input type="radio" name="Platelet" value=">4.5 lakhs/cumm" <%if(a[0]==">4.5 lakhs/cumm"){%> <%="checked"%><%}%>/> >4.5 lakhs/cumm<br>
+			<input type="radio" name="Platelet" value="<1.5 lakhs/cumm" <%if(a[0]=="<1.5 lakhs/cumm"){%> <%="checked"%><%}%>/> <1.5 lakhs/cumm<br>
+		</li><br>
+		<% var a=pre_res[0].pr11.split("*")%>
+		<li>RBC Count:  <input type="text"  value="<%=a[1]%>" name="RBCdesc" ><br>
+			<input type="radio" name="RBC" value="Normal : 4.5 to 5.5 mill/cumm" <%if(a[0]=="Normal : 4.5 to 5.5 mill/cumm"){%> <%="checked"%><%}%>/>Normal : 4.5 to 5.5 mill/cumm<br>
+			<input type="radio" name="RBC" value="< 4.5  mill/cumm" <%if(a[0]=="< 4.5  mill/cumm"){%> <%="checked"%><%}%>> < 4.5  mill/cumm<br>
+			<input type="radio" name="RBC" value=">5.5 mill/cumm" <%if(a[0]==">5.5 mill/cumm"){%> <%="checked"%><%}%>>>5.5 mill/cumm<br>
+		</li><br>
+		<% var a=pre_res[0].pr12.split("*")%>
+		<li>WBC Count:  <input type="text" value="<%=a[1]%>" name="WBCdesc"><br>
+			<input type="radio" name="WBC" value="Normal : 5,000 to 10,000 cells/cumm" <%if(a[0]=="Normal : 5,000 to 10,000 cells/cumm"){%> <%="checked"%><%}%>/>Normal : 5,000 to 10,000 cells/cumm<br>
+			<input type="radio" name="WBC" value="< 5,000 cells/cumm" <%if(a[0]=="< 5,000 cells/cumm"){%> <%="checked"%><%}%>/>< 5,000 cells/cumm<br>
+			<input type="radio" name="WBC" value=">10,000 cells/cumm" <%if(a[0]==">10,000 cells/cumm"){%> <%="checked"%><%}%>/>>10,000 cells/cumm<br>
+		</li><br>
+		<% var a=pre_res[0].pr13.split("*")%>
+		<li>INR:  <input type="text" value="<%=a[1]%>" name="INRdesc"><br>
+			<input type="radio" name="INR" value="Normal : 1.1 or below" <%if(a[0]=="Normal : 1.1 or below"){%> <%="checked"%><%}%>/>Normal : 1.1 or below<br>
+			<input type="radio" name="INR" value=">1.1" <%if(a[0]==">1.1"){%> <%="checked"%><%}%>/>>1.1<br>
+		</li><br>
+		<% var a=pre_res[0].pr14.split("*")%>
+		<li>RBS:  <input type="text" name="RBSdesc" value="<%=a[1]%>"><br>
+			<input type="radio" name="RBS" value="Normal : 70 to 170 mg/dl" <%if(a[0]=="Normal : 70 to 170 mg/dl"){%> <%="checked"%><%}%>/>Normal : 70 to 170 mg/dl<br>
+			<input type="radio" name="RBS" value="< 70 mg/dl" <%if(a[0]=="< 70 mg/dl"){%> <%="checked"%><%}%>/>< 70 mg/dl<br>
+			<input type="radio" name="RBS" value="> 170 mg/dl" <%if(a[0]=="> 170 mg/dl"){%> <%="checked"%><%}%>/>> 170 mg/dl<br>
+		</li><br></ul>
+		<li>HbsAg: 
+			<textarea rows = "1" cols = "50" value="" name = "HbsAgdesc"><%= pre_res[0].pr15%></textarea><br>
+		</li><br>
+		<li>HIV: 
+			<textarea rows = "1" cols = "50" value="" name = "HIVdesc"><%= pre_res[0].pr16%></textarea><br>
+		</li><br>
+		<li>HCV: 
+			<textarea rows = "1" cols = "50" value="" name = "HCVdesc"><%= pre_res[0].pr17%></textarea><br>
+		</li><br>
+		<li>Others: 
+			<textarea rows = "1" cols = "50" value="" name = "otherdesc"><%= pre_res[0].pr18%></textarea><br>
+		</li><br>
+	</li>
+	<li>Habits:<br><br>
+		<ul>
+			<% var str = pre_res[0].pr19.split("*") %>
+			<% if(str[0]=="yes") { %>
+			<li>Bruxism: <input type="text" value="<%= str[1]%>" name="Bruxismdesc"><br>
+				<input type="radio" name="Bruxism" checked>yes<br>
+				<input type="radio" name="Bruxism">no<br>
+			</li><br>
+			<% } %>
+			<% if(str[0]=="no") { %>
+				<li>Bruxism: <input type="text" value="<%= str[1]%>" name="Bruxismdesc"><br>
+				<input type="radio" name="Bruxism" >yes<br>
+				<input type="radio" name="Bruxism" checked>no<br>
+			</li><br>
+			<% } %>
+			<%var d=pre_res[0].pr20%>
+			<%if(d=="undefined**"){%>
+				<li>Smoking:<br>
+					<input type="radio" name="Smoking" onClick="ifYes(4)" value="yes" id="yess4">yes<br>
+					<input type="radio" name="Smoking" onClick="ifYes(4)" value="no" id="noo4">no<br>
+					<div id="div4" style="display:none;">
+					Frequency : <input type="text" name="Smokingfreq" value=""><br><br>
+					Duration : <input type="text" name="Smokingduration" value=""><br></div>
+				</li><br>
+			<%}%>
+			<% var a=pre_res[0].pr20.length %>
+			<% if(a<=3 && d!="undefined**") { %> 
+			<li>Smoking:<br>
+				<input type="radio" name="Smoking" onClick="ifYes(4)" value="yes" id="yess4">yes<br>
+				<input type="radio" name="Smoking" onClick="ifYes(4)" value="no" id="noo4" checked>no<br>
+				<div id="div4" style="display:none;">
+				Frequency : <input type="text" name="Smokingfreq" value=""><br><br>
+				Duration : <input type="text" name="Smokingduration" value=""><br></div>
+			</li><br>
+			<% } %>
+			<% var a=pre_res[0].pr20.length-1 %>
+			<% if(a>3 && d!="undefined**") {%>
+			 	<% var str=pre_res[0].pr20.split("*") %>
+			    <li>Smoking:<br>
+				<input type="radio" name="Smoking" onClick="ifYes(4)" value="yes" id="yess4" checked>yes<br>
+				<input type="radio" name="Smoking" onClick="ifYes(4)" value="no" id="noo4">no<br>
+				<div id="div4" style="display:block;">
+				Frequency : <input type="text" name="Smokingfreq" value="<%=str[1]%>"><br><br>
+				Duration : <input type="text" name="Smokingduration" value="<%=str[2]%>"><br></div>
+			    </li><br>
+			 <% } %>
+			 <% var a =pre_res[0].pr21.split("*")%>
+             <% if( a[0]=="yes") { %>
+				<li>Pan Chewing :  <input type="text" name="panchewingdesc" value="<%=a[1]%>"><br>
+					<input type="radio" name="Pan" value="yes" checked>yes<br>
+					<input type="radio" name="Pan" value="no">no<br>
+				</li><br>
+			<% } %>
+			<% if( a[0]=="no") { %>
+				<li>Pan Chewing :  <input type="text" name="panchewingdesc" value="<%=a[1]%>"><br>
+					<input type="radio" name="Pan" value="yes">yes<br>
+					<input type="radio" name="Pan" value="no" checked>no<br>
+				</li><br>
+			<% } %>
+			<% var a =pre_res[0].pr22.split("*")%>
+             <% if( a[0]=="yes") { %>
+				<li>Tongue Thrusting:  <input type="text" name="Thrustingdesc" value="<%=a[1]%>"><br>
+				<input type="radio" name="Thrusting" value="yes" checked>yes<br>
+				<input type="radio" name="Thrusting" value="no">no<br>
+			</li><br>
+			<% } %>
+			<% if( a[0]=="no") { %>
+				<li>Tongue Thrusting:  <input type="text" name="Thrustingdesc" value="<%=a[1]%>"><br>
+				<input type="radio" name="Thrusting" value="yes">yes<br>
+				<input type="radio" name="Thrusting" value="no" checked>no<br>
+			</li><br>
+			<% } %>
+			<% var a =pre_res[0].pr23.split("*")%>
+             <% if( a[0]=="yes") { %>
+			<li>Alcohol:  <input type="text" name="Alcoholdesc" value="<%=a[1]%>"><br>
+				<input type="radio" name="Alcohol" value="yes" checked>yes<br>
+				<input type="radio" name="Alcohol" value="no">no<br>
+			</li><br>
+			<% } %>
+			 <% if( a[0]=="no") { %>
+			<li>Alcohol:  <input type="text" name="Alcoholdesc" value="<%=a[1]%>"><br>
+				<input type="radio" name="Alcohol" value="yes" >yes<br>
+				<input type="radio" name="Alcohol" value="no" checked>no<br>
+			</li><br>
+			<% } %>
+			<li>Others: 
+				<textarea rows = "1" cols = "50" name = "other_habits_desc"><%= pre_res[0].pr24%></textarea><br>
+			</li><br>
+		</ul>
+	</li>
+	<li>Oral Hygiene measures:<br>
+		<ul>
+			<% var a=pre_res[0].pr25.split("*") %>
+			<li>Brushing:<br><ul>
+				<li>Frequency: <input type="text" name="Brushing" value="<%=a[0]%>"><br></li><br>
+				<li>Method:<br>
+				<ul><li>Flossing: <input type="text" name="Flossing" value="<%= pre_res[0].pr26%>"><br>
+			</li><br></ul>
+			<ul><li>Mouth wash: <input type="text" name="Mouthwash" value="<%= pre_res[0].pr27%>"><br>
+			</li></ul>
+				</li>
+			</li>
+		</ul>
+	</li>
+	<li>Soft tissue type:<br>
+		<%var a = pre_res[0].pr28%>
+		<input type="radio" name="Softtissue" value="Thin biotype" <%if(a=="Thin biotype"){%> <%="checked"%><%}%>/>Thin biotype<br>
+		<input type="radio" name="Softtissue" value="Thick biotype" <%if(a=="Thick biotype"){%> <%="checked"%><%}%>/>Thick biotype<br>
+		<input type="radio" name="Softtissue" value="Firm and resilient" <%if(a=="Firm and resilient"){%> <%="checked"%><%}%>/>Firm and resilient<br>
+		<input type="radio" name="Softtissue" value="Inflamed" <%if(a=="Inflamed"){%> <%="checked"%><%}%>/>Inflamed<br>
+		<input type="radio" name="Softtissue" value="Others" <%if(a=="Others"){%> <%="checked"%><%}%>/>Others<br>
+	</li><br>
+	<li>Occlusal Scheme:<br>
+		<ul>
+			<li>Mutually protected/group function:<br>
+				<ul>
+					<%var a=pre_res[0].pr29%>
+					<li>Right:<br>
+						<input type="radio" name="groupright" value="Canine guided" <%if(a=="Canine guided"){%> <%="checked"%><%}%>/>Canine guided<br>
+						<input type="radio" name="groupright" value="Group function" <%if(a=="Group function"){%> <%="checked"%><%}%>/>Group function<br>	
+					</li>
+					<%var a=pre_res[0].pr30%>
+					<li>Left:<br>
+						<input type="radio" name="groupleft" value="Canine guided" <%if(a=="Canine guided"){%> <%="checked"%><%}%>/>Canine guided<br>
+						<input type="radio" name="groupleft" value="Group function" <%if(a=="Group function"){%> <%="checked"%><%}%>/>Group function<br>	
+					</li>
+				</ul>
+			</li><br>
+			<li>Interferences:<br>
+				<ul>
+					<%var a=pre_res[0].pr31%>
+					<li>Right:<br>
+						<input type="radio" name="Interferencesright" value="Working" <%if(a=="Working"){%> <%="checked"%><%}%>/>Working<br>
+						<input type="radio" name="Interferencesright" value="Non Working"  <%if(a=="Non Working"){%> <%="checked"%><%}%>/>Non Working<br>	
+					</li>
+					<%var a=pre_res[0].pr32%>
+					<li>Left:<br>
+						<input type="radio" name="Interferencesleft" value="Working"  <%if(a=="Working"){%> <%="checked"%><%}%>/>Working<br>
+						<input type="radio" name="Interferencesleft" value="Non Working"  <%if(a=="Non Working"){%> <%="checked"%><%}%>/>Non Working<br>	
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li><br>
+	Protruisive:<input type="text"  name="protruisive" value="<%= pre_res[0].pr33%>">
+	<%var a=pre_res[0].pr34%>
+	<li>Seiberts classification of edentulous ridge:<br>
+		<input type="radio" name="ridge" value="Class-1" <%if(a=="Class-1"){%> <%="checked"%><%}%>/>Class-1<br>
+		<input type="radio" name="ridge" value="Class-2" <%if(a=="Class-2"){%> <%="checked"%><%}%>/>Class-2<br>
+		<input type="radio" name="ridge" value="Class-3" <%if(a=="Class-3"){%> <%="checked"%><%}%>/>Class-3<br>
+		<input type="radio" name="ridge" value="Class-4" <%if(a=="Class-4"){%> <%="checked"%><%}%>/>Class-4<br>
+	</li><br>
+	<%var a=pre_res[0].pr35%>
+	<li>Immediate Implants:<br>
+		<input type="radio" name="implant" value="Endodontically treated" <%if(a=="Endodontically treated"){%> <%="checked"%><%}%>/>Endodontically treated<br>
+		<input type="radio" name="implant" value="Periodontal compromised" <%if(a=="Periodontal compromised"){%> <%="checked"%><%}%>/>Periodontal compromised<br>
+		<input type="radio" name="implant" value="Active Infection" <%if(a=="Active Infection"){%> <%="checked"%><%}%>/>Active Infection<br>
+		<input type="radio" name="implant" value="Root resorption" <%if(a=="Root resorption"){%> <%="checked"%><%}%>/>Root resorption<br>
+		<input type="radio" name="implant" value="Peri Apical Lesions" <%if(a=="Peri Apical Lesions"){%> <%="checked"%><%}%>/>Peri Apical Lesions<br>
+		<input type="radio" name="implant" value="Trauma" <%if(a=="Trauma"){%> <%="checked"%><%}%>/>Trauma<br>
+		<input type="radio" name="implant" value="Others" <%if(a=="Others"){%> <%="checked"%><%}%>/>Others<br>
+	</li><br>
+	<li>Delayed implant placement : <input type="text" name="Delayedimplant" value="<%= pre_res[0].pr36%>"><br>
+	</li><br>
+	<li>Amount of keratinized tissue - 
+		Buccal:<input type="text" name="Buccal" value="<%= pre_res[0].pr37%>"><br><br>
+		Lingual <input type="text" name="Lingual"value ="<%= pre_res[0].pr38%>"><br><br>
+		Residual alvelor ridge <input type="text" name="Residual" value="<%= pre_res[0].pr39%>"><br>	
+	</li>
+</ul>
+
+<%}else{%>
+<h3>There is no data</h3>
+<%}%>
+</body>
+</html>
